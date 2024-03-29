@@ -3,3 +3,6 @@ __pycache__
 .vscode
 test/
 .DS_Store
+data/
+*.tar.gz
+*.pth

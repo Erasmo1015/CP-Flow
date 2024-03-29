@@ -1,0 +1,2 @@
+2024-03-19 18:45:58,925 - Namespace(data='gas', arch='icnn2', softplus_type='softplus', zero_softplus=False, symm_act_first=False, trainable_w0=True, clip_grad=0, preload_data=False, dimh=64, nhidden=10, nblocks=1, nepochs=1000, early_stopping=20, batch_size=1024, val_batch_size=1024, test_batch_size=1024, lr=0.001, wd=1e-06, atol=0.001, rtol=0.0, cuda=None, seed=0, data_root='data/', resume=None, save='experiments/gas', evaluate=False, fp64=False, val_freq=500, brute_val=False, log_freq=100, train_est_freq=100)
+2024-03-19 18:45:58,991 - Using GPU: None of the 2

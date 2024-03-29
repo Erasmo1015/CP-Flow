@@ -46,7 +46,7 @@ def standard_normal_sample(size):
     return torch.randn(size)
 
 
-# noinspection PyPep8Naming
+# noinspection PyPep8Namingdata
 def standard_normal_logprob(z):
     logZ = -0.5 * math.log(2 * math.pi)
     return logZ - z.pow(2) / 2
@@ -491,7 +491,7 @@ def main(rank, world_size, args):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data', type=str, default='cifar10', choices=['mnist', 'cifar10'])
+    parser.add_argument('--data', type=str, default='cifar10', choices=['mnist', 'cifar10', 'svhn'])
     parser.add_argument('--dataroot', type=str, default='data')
     parser.add_argument('--imagesize', type=int, default=None)
     parser.add_argument('--add_noise', type=eval, choices=[True, False], default=True)

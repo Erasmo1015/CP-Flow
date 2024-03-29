@@ -1,0 +1,978 @@
+2024-03-19 16:42:49,543 - Namespace(data='power', arch='icnn2', softplus_type='softplus', zero_softplus=False, symm_act_first=False, trainable_w0=True, clip_grad=0, preload_data=False, dimh=64, nhidden=10, nblocks=1, nepochs=1000, early_stopping=20, batch_size=1024, val_batch_size=1024, test_batch_size=1024, lr=0.001, wd=1e-06, atol=0.001, rtol=0.0, cuda=None, seed=0, data_root='data/', resume=None, save='experiments/power', evaluate=False, fp64=False, val_freq=500, brute_val=False, log_freq=100, train_est_freq=100)
+2024-03-19 16:42:49,627 - Using GPU: None of the 2
+2024-03-19 16:42:52,389 - SequentialFlow(
+  (flows): ModuleList(
+    (0): ActNorm(6)
+    (1): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=64, bias=True)
+          (1-9): 9 x PosLinear(in_features=64, out_features=64, bias=True)
+          (10): PosLinear(in_features=64, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-8): 9 x Linear(in_features=6, out_features=64, bias=True)
+          (9): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(64)
+        (actnorms): ModuleList(
+          (0-8): 9 x ActNormNoLogdet(64)
+          (9): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (2): ActNorm(6)
+  )
+)
+2024-03-19 16:42:52,390 - Number of trainable parameters:43298
+2024-03-19 16:42:52,724 - Iter 000000 | Epoch 0.00 | Time 0.218 | GradNorm 0.20 | CG iters 2 (2.00) | Train logp -8.458656 (-8.458656)
+2024-03-19 16:43:03,318 - [VAL] Iter 000000 | Val logp -8.437987 | NoImproveEpochs 00/20
+2024-03-19 16:43:18,417 - Iter 000100 | Epoch 0.06 | Time 0.186 | GradNorm 1.08 | CG iters 5 (3.55) | Train logp -7.173528 (-7.343961)
+2024-03-19 16:43:35,545 - Iter 000200 | Epoch 0.12 | Time 0.175 | GradNorm 1.30 | CG iters 6 (5.65) | Train logp -5.758278 (-5.968571)
+2024-03-19 16:43:52,891 - Iter 000300 | Epoch 0.19 | Time 0.193 | GradNorm 1.38 | CG iters 6 (5.95) | Train logp -5.205755 (-5.306919)
+2024-03-19 16:44:10,300 - Iter 000400 | Epoch 0.25 | Time 0.195 | GradNorm 1.27 | CG iters 6 (5.99) | Train logp -4.484237 (-4.593341)
+2024-03-19 16:44:27,780 - Iter 000500 | Epoch 0.31 | Time 0.207 | GradNorm 1.44 | CG iters 6 (6.00) | Train logp -3.793007 (-3.899147)
+2024-03-19 16:44:38,322 - [VAL] Iter 000500 | Val logp -3.815240 | NoImproveEpochs 00/20
+2024-03-19 16:44:56,139 - Iter 000600 | Epoch 0.37 | Time 0.209 | GradNorm 1.28 | CG iters 6 (6.00) | Train logp -3.430550 (-3.492695)
+2024-03-19 16:45:13,722 - Iter 000700 | Epoch 0.43 | Time 0.220 | GradNorm 1.31 | CG iters 6 (6.00) | Train logp -3.006276 (-3.070785)
+2024-03-19 16:45:31,402 - Iter 000800 | Epoch 0.49 | Time 0.218 | GradNorm 1.33 | CG iters 6 (6.00) | Train logp -2.755023 (-2.796899)
+2024-03-19 16:45:49,082 - Iter 000900 | Epoch 0.56 | Time 0.217 | GradNorm 1.30 | CG iters 6 (6.00) | Train logp -2.314655 (-2.378610)
+2024-03-19 16:46:06,751 - Iter 001000 | Epoch 0.62 | Time 0.215 | GradNorm 1.47 | CG iters 6 (6.00) | Train logp -2.083431 (-2.122577)
+2024-03-19 16:46:17,176 - [VAL] Iter 001000 | Val logp -2.124842 | NoImproveEpochs 00/20
+2024-03-19 16:46:34,904 - Iter 001100 | Epoch 0.68 | Time 0.212 | GradNorm 1.40 | CG iters 6 (6.00) | Train logp -1.953621 (-1.976028)
+2024-03-19 16:46:52,650 - Iter 001200 | Epoch 0.74 | Time 0.213 | GradNorm 1.59 | CG iters 6 (6.00) | Train logp -1.559917 (-1.615102)
+2024-03-19 16:47:10,450 - Iter 001300 | Epoch 0.80 | Time 0.214 | GradNorm 1.55 | CG iters 6 (6.00) | Train logp -1.348514 (-1.383869)
+2024-03-19 16:47:28,312 - Iter 001400 | Epoch 0.86 | Time 0.216 | GradNorm 1.71 | CG iters 6 (6.00) | Train logp -1.277614 (-1.291705)
+2024-03-19 16:47:46,188 - Iter 001500 | Epoch 0.93 | Time 0.221 | GradNorm 1.76 | CG iters 6 (6.00) | Train logp -1.042770 (-1.075784)
+2024-03-19 16:47:56,684 - [VAL] Iter 001500 | Val logp -1.266693 | NoImproveEpochs 00/20
+2024-03-19 16:48:14,554 - Iter 001600 | Epoch 0.99 | Time 0.218 | GradNorm 1.80 | CG iters 6 (6.00) | Train logp -1.212437 (-1.194314)
+2024-03-19 16:48:32,452 - Iter 001700 | Epoch 1.05 | Time 0.217 | GradNorm 1.92 | CG iters 6 (6.00) | Train logp -1.019393 (-1.042591)
+2024-03-19 16:48:50,429 - Iter 001800 | Epoch 1.11 | Time 0.213 | GradNorm 1.83 | CG iters 6 (6.00) | Train logp -0.954927 (-0.966553)
+2024-03-19 16:49:08,384 - Iter 001900 | Epoch 1.17 | Time 0.209 | GradNorm 1.96 | CG iters 6 (6.00) | Train logp -1.072157 (-1.058152)
+2024-03-19 16:49:26,384 - Iter 002000 | Epoch 1.23 | Time 0.217 | GradNorm 2.01 | CG iters 6 (6.00) | Train logp -1.110270 (-1.103358)
+2024-03-19 16:49:36,931 - [VAL] Iter 002000 | Val logp -0.844546 | NoImproveEpochs 00/20
+2024-03-19 16:49:54,949 - Iter 002100 | Epoch 1.30 | Time 0.222 | GradNorm 1.98 | CG iters 6 (6.00) | Train logp -0.871704 (-0.902426)
+2024-03-19 16:50:13,032 - Iter 002200 | Epoch 1.36 | Time 0.218 | GradNorm 1.98 | CG iters 6 (6.00) | Train logp -0.564855 (-0.609624)
+2024-03-19 16:50:31,148 - Iter 002300 | Epoch 1.42 | Time 0.214 | GradNorm 2.39 | CG iters 6 (6.00) | Train logp -0.522274 (-0.533859)
+2024-03-19 16:50:49,291 - Iter 002400 | Epoch 1.48 | Time 0.219 | GradNorm 2.40 | CG iters 6 (6.00) | Train logp -0.461160 (-0.470801)
+2024-03-19 16:51:07,458 - Iter 002500 | Epoch 1.54 | Time 0.220 | GradNorm 2.26 | CG iters 6 (6.00) | Train logp -0.202746 (-0.238295)
+2024-03-19 16:51:18,053 - [VAL] Iter 002500 | Val logp -0.448396 | NoImproveEpochs 00/20
+2024-03-19 16:51:36,183 - Iter 002600 | Epoch 1.60 | Time 0.219 | GradNorm 2.58 | CG iters 6 (6.00) | Train logp -0.341928 (-0.328184)
+2024-03-19 16:51:54,398 - Iter 002700 | Epoch 1.67 | Time 0.216 | GradNorm 2.53 | CG iters 6 (6.00) | Train logp -0.236482 (-0.248644)
+2024-03-19 16:52:12,646 - Iter 002800 | Epoch 1.73 | Time 0.218 | GradNorm 2.50 | CG iters 6 (6.00) | Train logp -0.389121 (-0.370491)
+2024-03-19 16:52:30,938 - Iter 002900 | Epoch 1.79 | Time 0.221 | GradNorm 2.80 | CG iters 6 (6.00) | Train logp -0.380221 (-0.378930)
+2024-03-19 16:52:49,243 - Iter 003000 | Epoch 1.85 | Time 0.215 | GradNorm 2.83 | CG iters 6 (6.00) | Train logp -0.101152 (-0.137991)
+2024-03-19 16:52:59,806 - [VAL] Iter 003000 | Val logp -0.255100 | NoImproveEpochs 00/20
+2024-03-19 16:53:18,098 - Iter 003100 | Epoch 1.91 | Time 0.216 | GradNorm 2.94 | CG iters 6 (6.00) | Train logp -0.237855 (-0.224611)
+2024-03-19 16:53:36,453 - Iter 003200 | Epoch 1.97 | Time 0.217 | GradNorm 3.07 | CG iters 6 (6.00) | Train logp -0.278583 (-0.271425)
+2024-03-19 16:53:54,795 - Iter 003300 | Epoch 2.04 | Time 0.210 | GradNorm 3.56 | CG iters 6 (6.00) | Train logp -0.279964 (-0.278832)
+2024-03-19 16:54:13,192 - Iter 003400 | Epoch 2.10 | Time 0.205 | GradNorm 3.47 | CG iters 6 (6.00) | Train logp -0.215437 (-0.223844)
+2024-03-19 16:54:31,634 - Iter 003500 | Epoch 2.16 | Time 0.217 | GradNorm 3.49 | CG iters 6 (6.00) | Train logp -0.299812 (-0.289737)
+2024-03-19 16:54:42,225 - [VAL] Iter 003500 | Val logp -0.175814 | NoImproveEpochs 00/20
+2024-03-19 16:55:00,694 - Iter 003600 | Epoch 2.22 | Time 0.218 | GradNorm 3.55 | CG iters 6 (6.00) | Train logp -0.067100 (-0.096626)
+2024-03-19 16:55:19,228 - Iter 003700 | Epoch 2.28 | Time 0.220 | GradNorm 3.80 | CG iters 6 (6.00) | Train logp 0.036437 (0.018790)
+2024-03-19 16:55:37,772 - Iter 003800 | Epoch 2.34 | Time 0.214 | GradNorm 3.58 | CG iters 6 (6.00) | Train logp -0.208652 (-0.178489)
+2024-03-19 16:55:56,315 - Iter 003900 | Epoch 2.41 | Time 0.181 | GradNorm 4.26 | CG iters 6 (6.00) | Train logp 0.071280 (0.038156)
+2024-03-19 16:56:14,904 - Iter 004000 | Epoch 2.47 | Time 0.193 | GradNorm 4.34 | CG iters 6 (6.00) | Train logp -0.218077 (-0.184095)
+2024-03-19 16:56:25,533 - [VAL] Iter 004000 | Val logp nan | NoImproveEpochs 01/20
+2024-03-19 16:56:44,149 - Iter 004100 | Epoch 2.53 | Time 0.192 | GradNorm 4.05 | CG iters 6 (6.00) | Train logp -0.202108 (-0.199719)
+2024-03-19 16:57:02,846 - Iter 004200 | Epoch 2.59 | Time 0.201 | GradNorm 4.33 | CG iters 6 (6.00) | Train logp -0.106932 (-0.119238)
+2024-03-19 16:57:21,560 - Iter 004300 | Epoch 2.65 | Time 0.213 | GradNorm 4.21 | CG iters 6 (6.00) | Train logp -0.054154 (-0.062785)
+2024-03-19 16:57:40,329 - Iter 004400 | Epoch 2.71 | Time 0.221 | GradNorm 4.43 | CG iters 6 (6.00) | Train logp -0.012411 (-0.019092)
+2024-03-19 16:57:59,123 - Iter 004500 | Epoch 2.78 | Time 0.221 | GradNorm 4.43 | CG iters 6 (6.00) | Train logp 0.026303 (0.020283)
+2024-03-19 16:58:09,764 - [VAL] Iter 004500 | Val logp nan | NoImproveEpochs 02/20
+2024-03-19 16:58:28,568 - Iter 004600 | Epoch 2.84 | Time 0.222 | GradNorm 4.65 | CG iters 6 (6.00) | Train logp -0.209902 (-0.179375)
+2024-03-19 16:58:47,441 - Iter 004700 | Epoch 2.90 | Time 0.218 | GradNorm 4.60 | CG iters 6 (6.00) | Train logp 0.157755 (0.113045)
+2024-03-19 16:59:06,343 - Iter 004800 | Epoch 2.96 | Time 0.217 | GradNorm 4.80 | CG iters 6 (6.00) | Train logp -0.106359 (-0.077262)
+2024-03-19 16:59:25,226 - Iter 004900 | Epoch 3.02 | Time 0.198 | GradNorm 5.36 | CG iters 6 (6.00) | Train logp -0.005743 (-0.015228)
+2024-03-19 16:59:44,159 - Iter 005000 | Epoch 3.08 | Time 0.201 | GradNorm 4.66 | CG iters 6 (6.00) | Train logp 0.057012 (0.047432)
+2024-03-19 16:59:54,786 - [VAL] Iter 005000 | Val logp -0.028422 | NoImproveEpochs 00/20
+2024-03-19 17:00:13,740 - Iter 005100 | Epoch 3.15 | Time 0.196 | GradNorm 4.86 | CG iters 6 (6.00) | Train logp -0.218247 (-0.183013)
+2024-03-19 17:00:32,757 - Iter 005200 | Epoch 3.21 | Time 0.208 | GradNorm 5.20 | CG iters 6 (6.00) | Train logp -0.125606 (-0.133219)
+2024-03-19 17:00:51,802 - Iter 005300 | Epoch 3.27 | Time 0.210 | GradNorm 4.79 | CG iters 6 (6.00) | Train logp 0.036226 (0.013755)
+2024-03-19 17:01:10,919 - Iter 005400 | Epoch 3.33 | Time 0.190 | GradNorm 4.59 | CG iters 6 (6.00) | Train logp -0.044697 (-0.036945)
+2024-03-19 17:01:30,027 - Iter 005500 | Epoch 3.39 | Time 0.198 | GradNorm 4.56 | CG iters 6 (6.00) | Train logp 0.023329 (0.015335)
+2024-03-19 17:01:40,688 - [VAL] Iter 005500 | Val logp -0.009704 | NoImproveEpochs 00/20
+2024-03-19 17:01:59,818 - Iter 005600 | Epoch 3.45 | Time 0.223 | GradNorm 4.65 | CG iters 6 (6.00) | Train logp 0.035320 (0.032670)
+2024-03-19 17:02:19,044 - Iter 005700 | Epoch 3.52 | Time 0.214 | GradNorm 4.90 | CG iters 6 (6.00) | Train logp 0.028611 (0.029149)
+2024-03-19 17:02:38,503 - Iter 005800 | Epoch 3.58 | Time 0.218 | GradNorm 4.99 | CG iters 6 (6.00) | Train logp -0.118259 (-0.098710)
+2024-03-19 17:02:57,888 - Iter 005900 | Epoch 3.64 | Time 0.216 | GradNorm 4.72 | CG iters 6 (6.00) | Train logp -0.049076 (-0.055659)
+2024-03-19 17:03:17,264 - Iter 006000 | Epoch 3.70 | Time 0.189 | GradNorm 5.28 | CG iters 6 (6.00) | Train logp 0.155812 (0.127767)
+2024-03-19 17:03:27,902 - [VAL] Iter 006000 | Val logp -0.004546 | NoImproveEpochs 00/20
+2024-03-19 17:03:47,302 - Iter 006100 | Epoch 3.76 | Time 0.197 | GradNorm 5.28 | CG iters 6 (6.00) | Train logp -0.039252 (-0.017102)
+2024-03-19 17:04:06,956 - Iter 006200 | Epoch 3.82 | Time 0.192 | GradNorm 5.03 | CG iters 6 (6.00) | Train logp -0.095203 (-0.084846)
+2024-03-19 17:04:26,723 - Iter 006300 | Epoch 3.89 | Time 0.197 | GradNorm 5.14 | CG iters 6 (6.00) | Train logp -0.039231 (-0.045281)
+2024-03-19 17:04:46,299 - Iter 006400 | Epoch 3.95 | Time 0.222 | GradNorm 4.95 | CG iters 6 (6.00) | Train logp 0.074821 (0.058893)
+2024-03-19 17:05:08,158 - Iter 006500 | Epoch 4.01 | Time 0.222 | GradNorm 5.32 | CG iters 6 (6.00) | Train logp -0.032251 (-0.020164)
+2024-03-19 17:05:19,016 - [VAL] Iter 006500 | Val logp nan | NoImproveEpochs 01/20
+2024-03-19 17:05:38,508 - Iter 006600 | Epoch 4.07 | Time 0.222 | GradNorm 5.35 | CG iters 6 (6.00) | Train logp -0.118091 (-0.105104)
+2024-03-19 17:05:58,485 - Iter 006700 | Epoch 4.13 | Time 0.240 | GradNorm 4.99 | CG iters 6 (6.00) | Train logp 0.151402 (0.117384)
+2024-03-19 17:06:18,593 - Iter 006800 | Epoch 4.19 | Time 0.221 | GradNorm 4.97 | CG iters 6 (6.00) | Train logp -0.015735 (0.001919)
+2024-03-19 17:06:38,778 - Iter 006900 | Epoch 4.26 | Time 0.255 | GradNorm 5.12 | CG iters 6 (6.00) | Train logp 0.139128 (0.120931)
+2024-03-19 17:06:59,262 - Iter 007000 | Epoch 4.32 | Time 0.199 | GradNorm 5.01 | CG iters 6 (6.00) | Train logp 0.142379 (0.139535)
+2024-03-19 17:07:10,131 - [VAL] Iter 007000 | Val logp 0.028983 | NoImproveEpochs 00/20
+2024-03-19 17:07:30,509 - Iter 007100 | Epoch 4.38 | Time 0.206 | GradNorm 5.10 | CG iters 6 (6.00) | Train logp -0.010086 (0.009757)
+2024-03-19 17:07:50,856 - Iter 007200 | Epoch 4.44 | Time 0.210 | GradNorm 4.92 | CG iters 6 (6.00) | Train logp 0.068717 (0.060897)
+2024-03-19 17:08:10,990 - Iter 007300 | Epoch 4.50 | Time 0.205 | GradNorm 4.96 | CG iters 6 (6.00) | Train logp 0.245649 (0.221148)
+2024-03-19 17:08:31,012 - Iter 007400 | Epoch 4.57 | Time 0.223 | GradNorm 4.99 | CG iters 6 (6.00) | Train logp 0.053333 (0.075589)
+2024-03-19 17:08:51,092 - Iter 007500 | Epoch 4.63 | Time 0.220 | GradNorm 5.31 | CG iters 6 (6.00) | Train logp 0.027855 (0.034185)
+2024-03-19 17:09:01,852 - [VAL] Iter 007500 | Val logp nan | NoImproveEpochs 01/20
+2024-03-19 17:09:21,874 - Iter 007600 | Epoch 4.69 | Time 0.214 | GradNorm 5.20 | CG iters 6 (6.00) | Train logp -0.041525 (-0.031485)
+2024-03-19 17:09:42,055 - Iter 007700 | Epoch 4.75 | Time 0.204 | GradNorm 5.30 | CG iters 6 (6.00) | Train logp -0.008349 (-0.011418)
+2024-03-19 17:10:02,274 - Iter 007800 | Epoch 4.81 | Time 0.225 | GradNorm 5.21 | CG iters 6 (6.00) | Train logp 0.098052 (0.083534)
+2024-03-19 17:10:22,565 - Iter 007900 | Epoch 4.87 | Time 0.224 | GradNorm 5.30 | CG iters 6 (6.00) | Train logp 0.187932 (0.174087)
+2024-03-19 17:10:42,829 - Iter 008000 | Epoch 4.94 | Time 0.217 | GradNorm 5.35 | CG iters 6 (6.00) | Train logp 0.140427 (0.144891)
+2024-03-19 17:10:53,643 - [VAL] Iter 008000 | Val logp nan | NoImproveEpochs 02/20
+2024-03-19 17:11:13,744 - Iter 008100 | Epoch 5.00 | Time 0.200 | GradNorm 5.32 | CG iters 6 (6.00) | Train logp 0.042156 (0.055780)
+2024-03-19 17:11:33,649 - Iter 008200 | Epoch 5.06 | Time 0.190 | GradNorm 5.62 | CG iters 6 (6.00) | Train logp 0.049435 (0.050276)
+2024-03-19 17:11:53,597 - Iter 008300 | Epoch 5.12 | Time 0.196 | GradNorm 5.53 | CG iters 6 (6.00) | Train logp 0.151141 (0.137765)
+2024-03-19 17:12:13,609 - Iter 008400 | Epoch 5.18 | Time 0.207 | GradNorm 5.27 | CG iters 6 (6.00) | Train logp 0.082810 (0.090098)
+2024-03-19 17:12:33,623 - Iter 008500 | Epoch 5.24 | Time 0.218 | GradNorm 5.42 | CG iters 6 (6.00) | Train logp 0.022558 (0.031515)
+2024-03-19 17:12:44,283 - [VAL] Iter 008500 | Val logp 0.053218 | NoImproveEpochs 00/20
+2024-03-19 17:13:04,270 - Iter 008600 | Epoch 5.31 | Time 0.223 | GradNorm 5.23 | CG iters 6 (6.00) | Train logp 0.009861 (0.012733)
+2024-03-19 17:13:24,367 - Iter 008700 | Epoch 5.37 | Time 0.216 | GradNorm 5.24 | CG iters 6 (6.00) | Train logp -0.109358 (-0.093166)
+2024-03-19 17:13:44,963 - Iter 008800 | Epoch 5.43 | Time 0.221 | GradNorm 5.39 | CG iters 6 (6.00) | Train logp -0.025332 (-0.034329)
+2024-03-19 17:14:05,408 - Iter 008900 | Epoch 5.49 | Time 0.215 | GradNorm 5.74 | CG iters 6 (6.00) | Train logp 0.115596 (0.095713)
+2024-03-19 17:14:25,829 - Iter 009000 | Epoch 5.55 | Time 0.193 | GradNorm 5.45 | CG iters 6 (6.00) | Train logp -0.015288 (-0.000567)
+2024-03-19 17:14:36,650 - [VAL] Iter 009000 | Val logp 0.064834 | NoImproveEpochs 00/20
+2024-03-19 17:14:57,028 - Iter 009100 | Epoch 5.61 | Time 0.193 | GradNorm 5.54 | CG iters 6 (6.00) | Train logp 0.099362 (0.086110)
+2024-03-19 17:15:17,567 - Iter 009200 | Epoch 5.68 | Time 0.203 | GradNorm 5.47 | CG iters 6 (6.00) | Train logp -0.003139 (0.008697)
+2024-03-19 17:15:37,998 - Iter 009300 | Epoch 5.74 | Time 0.207 | GradNorm 5.72 | CG iters 6 (6.00) | Train logp 0.067523 (0.059721)
+2024-03-19 17:16:03,080 - Iter 009400 | Epoch 5.80 | Time 0.299 | GradNorm 5.51 | CG iters 6 (6.00) | Train logp 0.167427 (0.153143)
+2024-03-19 17:16:24,035 - Iter 009500 | Epoch 5.86 | Time 0.193 | GradNorm 5.55 | CG iters 6 (6.00) | Train logp 0.027545 (0.044201)
+2024-03-19 17:16:34,712 - [VAL] Iter 009500 | Val logp 0.076306 | NoImproveEpochs 00/20
+2024-03-19 17:16:55,112 - Iter 009600 | Epoch 5.92 | Time 0.186 | GradNorm 5.44 | CG iters 6 (6.00) | Train logp 0.116544 (0.106950)
+2024-03-19 17:17:15,662 - Iter 009700 | Epoch 5.98 | Time 0.187 | GradNorm 5.57 | CG iters 6 (6.00) | Train logp 0.142442 (0.137735)
+2024-03-19 17:17:36,144 - Iter 009800 | Epoch 6.05 | Time 0.195 | GradNorm 5.98 | CG iters 6 (6.00) | Train logp 0.077881 (0.085819)
+2024-03-19 17:17:56,626 - Iter 009900 | Epoch 6.11 | Time 0.194 | GradNorm 6.19 | CG iters 6 (6.00) | Train logp 0.067306 (0.069761)
+2024-03-19 17:18:17,172 - Iter 010000 | Epoch 6.17 | Time 0.189 | GradNorm 5.92 | CG iters 6 (6.00) | Train logp 0.035663 (0.040185)
+2024-03-19 17:18:27,920 - [VAL] Iter 010000 | Val logp nan | NoImproveEpochs 01/20
+2024-03-19 17:18:48,628 - Iter 010100 | Epoch 6.23 | Time 0.203 | GradNorm 5.54 | CG iters 6 (6.00) | Train logp 0.181819 (0.163035)
+2024-03-19 17:19:09,384 - Iter 010200 | Epoch 6.29 | Time 0.202 | GradNorm 5.89 | CG iters 6 (6.00) | Train logp 0.190356 (0.186732)
+2024-03-19 17:19:30,497 - Iter 010300 | Epoch 6.35 | Time 0.218 | GradNorm 5.68 | CG iters 6 (6.00) | Train logp -0.067522 (-0.033803)
+2024-03-19 17:19:51,754 - Iter 010400 | Epoch 6.42 | Time 0.228 | GradNorm 5.93 | CG iters 6 (6.00) | Train logp 0.050669 (0.039467)
+2024-03-19 17:20:12,705 - Iter 010500 | Epoch 6.48 | Time 0.220 | GradNorm 5.83 | CG iters 6 (6.00) | Train logp 0.046584 (0.045640)
+2024-03-19 17:20:23,510 - [VAL] Iter 010500 | Val logp nan | NoImproveEpochs 02/20
+2024-03-19 17:20:44,525 - Iter 010600 | Epoch 6.54 | Time 0.188 | GradNorm 6.37 | CG iters 6 (6.00) | Train logp -0.117720 (-0.096055)
+2024-03-19 17:21:05,604 - Iter 010700 | Epoch 6.60 | Time 0.221 | GradNorm 5.38 | CG iters 6 (6.00) | Train logp -0.067634 (-0.071403)
+2024-03-19 17:21:26,823 - Iter 010800 | Epoch 6.66 | Time 0.221 | GradNorm 5.93 | CG iters 6 (6.00) | Train logp -0.017447 (-0.024602)
+2024-03-19 17:21:47,940 - Iter 010900 | Epoch 6.72 | Time 0.222 | GradNorm 5.91 | CG iters 6 (6.00) | Train logp 0.220313 (0.187832)
+2024-03-19 17:22:13,974 - Iter 011000 | Epoch 6.79 | Time 0.341 | GradNorm 5.81 | CG iters 6 (6.00) | Train logp 0.231789 (0.225959)
+2024-03-19 17:22:28,331 - [VAL] Iter 011000 | Val logp nan | NoImproveEpochs 03/20
+2024-03-19 17:22:49,865 - Iter 011100 | Epoch 6.85 | Time 0.227 | GradNorm 6.09 | CG iters 6 (6.00) | Train logp -0.011453 (0.020033)
+2024-03-19 17:23:11,515 - Iter 011200 | Epoch 6.91 | Time 0.197 | GradNorm 5.87 | CG iters 6 (6.00) | Train logp 0.091857 (0.082331)
+2024-03-19 17:23:32,841 - Iter 011300 | Epoch 6.97 | Time 0.227 | GradNorm 6.76 | CG iters 6 (6.00) | Train logp 0.150916 (0.141820)
+2024-03-19 17:23:54,365 - Iter 011400 | Epoch 7.03 | Time 0.225 | GradNorm 5.80 | CG iters 6 (6.00) | Train logp 0.227739 (0.216345)
+2024-03-19 17:24:16,205 - Iter 011500 | Epoch 7.09 | Time 0.227 | GradNorm 5.82 | CG iters 6 (6.00) | Train logp 0.251872 (0.247160)
+2024-03-19 17:24:27,064 - [VAL] Iter 011500 | Val logp nan | NoImproveEpochs 04/20
+2024-03-19 17:24:48,513 - Iter 011600 | Epoch 7.16 | Time 0.230 | GradNorm 5.77 | CG iters 6 (6.00) | Train logp 0.216260 (0.220358)
+2024-03-19 17:25:10,160 - Iter 011700 | Epoch 7.22 | Time 0.222 | GradNorm 6.64 | CG iters 6 (6.00) | Train logp 0.064697 (0.085341)
+2024-03-19 17:25:31,805 - Iter 011800 | Epoch 7.28 | Time 0.218 | GradNorm 5.80 | CG iters 6 (6.00) | Train logp 0.193774 (0.179394)
+2024-03-19 17:25:53,295 - Iter 011900 | Epoch 7.34 | Time 0.203 | GradNorm 6.01 | CG iters 6 (6.00) | Train logp 0.173176 (0.174000)
+2024-03-19 17:26:14,975 - Iter 012000 | Epoch 7.40 | Time 0.221 | GradNorm 6.22 | CG iters 6 (6.00) | Train logp 0.027664 (0.047071)
+2024-03-19 17:26:25,814 - [VAL] Iter 012000 | Val logp nan | NoImproveEpochs 05/20
+2024-03-19 17:26:47,480 - Iter 012100 | Epoch 7.46 | Time 0.220 | GradNorm 5.90 | CG iters 6 (6.00) | Train logp 0.011926 (0.016587)
+2024-03-19 17:27:09,056 - Iter 012200 | Epoch 7.53 | Time 0.219 | GradNorm 5.84 | CG iters 6 (6.00) | Train logp 0.094820 (0.084445)
+2024-03-19 17:27:30,703 - Iter 012300 | Epoch 7.59 | Time 0.188 | GradNorm 6.27 | CG iters 6 (6.00) | Train logp 0.151596 (0.142690)
+2024-03-19 17:27:52,453 - Iter 012400 | Epoch 7.65 | Time 0.191 | GradNorm 5.86 | CG iters 6 (6.00) | Train logp 0.000379 (0.019252)
+2024-03-19 17:28:14,255 - Iter 012500 | Epoch 7.71 | Time 0.218 | GradNorm 5.94 | CG iters 6 (6.00) | Train logp 0.005968 (0.007730)
+2024-03-19 17:28:25,068 - [VAL] Iter 012500 | Val logp nan | NoImproveEpochs 06/20
+2024-03-19 17:28:46,707 - Iter 012600 | Epoch 7.77 | Time 0.217 | GradNorm 6.30 | CG iters 6 (6.00) | Train logp 0.217720 (0.189872)
+2024-03-19 17:29:08,293 - Iter 012700 | Epoch 7.83 | Time 0.221 | GradNorm 6.37 | CG iters 6 (6.00) | Train logp 0.261466 (0.251971)
+2024-03-19 17:29:30,080 - Iter 012800 | Epoch 7.90 | Time 0.222 | GradNorm 6.51 | CG iters 6 (6.00) | Train logp 0.078722 (0.101699)
+2024-03-19 17:29:51,944 - Iter 012900 | Epoch 7.96 | Time 0.219 | GradNorm 5.94 | CG iters 6 (6.00) | Train logp 0.097658 (0.098194)
+2024-03-19 17:30:13,849 - Iter 013000 | Epoch 8.02 | Time 0.216 | GradNorm 6.40 | CG iters 6 (6.00) | Train logp 0.192565 (0.180050)
+2024-03-19 17:30:24,661 - [VAL] Iter 013000 | Val logp nan | NoImproveEpochs 07/20
+2024-03-19 17:30:46,373 - Iter 013100 | Epoch 8.08 | Time 0.214 | GradNorm 5.64 | CG iters 6 (6.00) | Train logp 0.055944 (0.072403)
+2024-03-19 17:31:08,135 - Iter 013200 | Epoch 8.14 | Time 0.194 | GradNorm 5.29 | CG iters 6 (6.00) | Train logp 0.141549 (0.132379)
+2024-03-19 17:31:31,105 - Iter 013300 | Epoch 8.20 | Time 0.172 | GradNorm 5.41 | CG iters 6 (6.00) | Train logp 0.093667 (0.098801)
+2024-03-19 17:31:52,890 - Iter 013400 | Epoch 8.27 | Time 0.171 | GradNorm 5.34 | CG iters 6 (6.00) | Train logp 0.329671 (0.299053)
+2024-03-19 17:32:14,940 - Iter 013500 | Epoch 8.33 | Time 0.173 | GradNorm 5.50 | CG iters 6 (6.00) | Train logp 0.029414 (0.065173)
+2024-03-19 17:32:25,827 - [VAL] Iter 013500 | Val logp nan | NoImproveEpochs 08/20
+2024-03-19 17:32:47,685 - Iter 013600 | Epoch 8.39 | Time 0.173 | GradNorm 6.00 | CG iters 6 (6.00) | Train logp 0.279480 (0.251059)
+2024-03-19 17:33:09,629 - Iter 013700 | Epoch 8.45 | Time 0.195 | GradNorm 5.61 | CG iters 6 (6.00) | Train logp 0.244343 (0.245234)
+2024-03-19 17:33:31,556 - Iter 013800 | Epoch 8.51 | Time 0.175 | GradNorm 6.02 | CG iters 6 (6.00) | Train logp 0.065003 (0.088905)
+2024-03-19 17:33:53,615 - Iter 013900 | Epoch 8.57 | Time 0.184 | GradNorm 5.46 | CG iters 6 (6.00) | Train logp 0.293421 (0.266298)
+2024-03-19 17:34:15,904 - Iter 014000 | Epoch 8.64 | Time 0.174 | GradNorm 5.57 | CG iters 6 (6.00) | Train logp 0.188060 (0.198436)
+2024-03-19 17:34:26,749 - [VAL] Iter 014000 | Val logp nan | NoImproveEpochs 09/20
+2024-03-19 17:34:48,852 - Iter 014100 | Epoch 8.70 | Time 0.174 | GradNorm 6.28 | CG iters 6 (6.00) | Train logp 0.275457 (0.265243)
+2024-03-19 17:35:11,130 - Iter 014200 | Epoch 8.76 | Time 0.170 | GradNorm 5.62 | CG iters 6 (6.00) | Train logp 0.087655 (0.111206)
+2024-03-19 17:35:33,285 - Iter 014300 | Epoch 8.82 | Time 0.171 | GradNorm 5.70 | CG iters 6 (6.00) | Train logp 0.192407 (0.181638)
+2024-03-19 17:35:55,585 - Iter 014400 | Epoch 8.88 | Time 0.171 | GradNorm 5.69 | CG iters 6 (6.00) | Train logp 0.197964 (0.195799)
+2024-03-19 17:36:17,911 - Iter 014500 | Epoch 8.95 | Time 0.173 | GradNorm 5.51 | CG iters 6 (6.00) | Train logp -0.026664 (0.002839)
+2024-03-19 17:36:28,783 - [VAL] Iter 014500 | Val logp nan | NoImproveEpochs 10/20
+2024-03-19 17:36:51,029 - Iter 014600 | Epoch 9.01 | Time 0.174 | GradNorm 6.59 | CG iters 6 (6.00) | Train logp 0.111036 (0.096687)
+2024-03-19 17:37:13,286 - Iter 014700 | Epoch 9.07 | Time 0.178 | GradNorm 5.76 | CG iters 6 (6.00) | Train logp 0.179095 (0.168166)
+2024-03-19 17:37:35,672 - Iter 014800 | Epoch 9.13 | Time 0.172 | GradNorm 5.80 | CG iters 6 (6.00) | Train logp 0.164748 (0.165201)
+2024-03-19 17:37:58,071 - Iter 014900 | Epoch 9.19 | Time 0.175 | GradNorm 5.55 | CG iters 6 (6.00) | Train logp 0.058990 (0.073076)
+2024-03-19 17:38:20,479 - Iter 015000 | Epoch 9.25 | Time 0.172 | GradNorm 5.39 | CG iters 6 (6.00) | Train logp -0.094446 (-0.072229)
+2024-03-19 17:38:31,455 - [VAL] Iter 015000 | Val logp nan | NoImproveEpochs 11/20
+2024-03-19 17:38:53,782 - Iter 015100 | Epoch 9.32 | Time 0.171 | GradNorm 5.84 | CG iters 6 (6.00) | Train logp 0.067014 (0.048548)
+2024-03-19 17:39:16,984 - Iter 015200 | Epoch 9.38 | Time 0.183 | GradNorm 5.78 | CG iters 6 (6.00) | Train logp 0.016992 (0.021177)
+2024-03-19 17:39:45,617 - Iter 015300 | Epoch 9.44 | Time 0.171 | GradNorm 5.80 | CG iters 6 (6.00) | Train logp 0.133971 (0.119013)
+2024-03-19 17:40:08,076 - Iter 015400 | Epoch 9.50 | Time 0.171 | GradNorm 5.99 | CG iters 6 (6.00) | Train logp 0.276177 (0.255334)
+2024-03-19 17:40:30,639 - Iter 015500 | Epoch 9.56 | Time 0.171 | GradNorm 5.71 | CG iters 6 (6.00) | Train logp 0.098930 (0.119672)
+2024-03-19 17:40:41,707 - [VAL] Iter 015500 | Val logp nan | NoImproveEpochs 12/20
+2024-03-19 17:41:04,497 - Iter 015600 | Epoch 9.62 | Time 0.189 | GradNorm 5.58 | CG iters 6 (6.00) | Train logp 0.239475 (0.223587)
+2024-03-19 17:41:28,596 - Iter 015700 | Epoch 9.69 | Time 0.183 | GradNorm 5.96 | CG iters 6 (6.00) | Train logp 0.238555 (0.236570)
+2024-03-19 17:41:51,503 - Iter 015800 | Epoch 9.75 | Time 0.196 | GradNorm 5.76 | CG iters 6 (6.00) | Train logp 0.124577 (0.139429)
+2024-03-19 17:42:14,264 - Iter 015900 | Epoch 9.81 | Time 0.183 | GradNorm 6.04 | CG iters 6 (6.00) | Train logp 0.178535 (0.173349)
+2024-03-19 17:42:36,959 - Iter 016000 | Epoch 9.87 | Time 0.178 | GradNorm 6.00 | CG iters 6 (6.00) | Train logp 0.163711 (0.164989)
+2024-03-19 17:42:47,838 - [VAL] Iter 016000 | Val logp nan | NoImproveEpochs 13/20
+2024-03-19 17:43:10,648 - Iter 016100 | Epoch 9.93 | Time 0.175 | GradNorm 5.90 | CG iters 6 (6.00) | Train logp 0.163056 (0.163313)
+2024-03-19 17:43:33,562 - Iter 016200 | Epoch 9.99 | Time 0.179 | GradNorm 6.02 | CG iters 6 (6.00) | Train logp -0.001029 (0.020766)
+2024-03-19 17:43:56,398 - Iter 016300 | Epoch 10.06 | Time 0.174 | GradNorm 6.06 | CG iters 6 (6.00) | Train logp 0.147640 (0.130814)
+2024-03-19 17:44:19,286 - Iter 016400 | Epoch 10.12 | Time 0.178 | GradNorm 5.36 | CG iters 6 (6.00) | Train logp 0.246976 (0.231570)
+2024-03-19 17:44:42,175 - Iter 016500 | Epoch 10.18 | Time 0.174 | GradNorm 5.43 | CG iters 6 (6.00) | Train logp -0.087161 (-0.044891)
+2024-03-19 17:44:53,552 - [VAL] Iter 016500 | Val logp nan | NoImproveEpochs 14/20
+2024-03-19 17:45:16,622 - Iter 016600 | Epoch 10.24 | Time 0.189 | GradNorm 5.40 | CG iters 6 (6.00) | Train logp 0.102545 (0.082992)
+2024-03-19 17:45:39,802 - Iter 016700 | Epoch 10.30 | Time 0.171 | GradNorm 5.83 | CG iters 6 (6.00) | Train logp 0.038724 (0.044595)
+2024-03-19 17:46:02,710 - Iter 016800 | Epoch 10.36 | Time 0.172 | GradNorm 5.65 | CG iters 6 (6.00) | Train logp 0.222686 (0.199068)
+2024-03-19 17:46:25,947 - Iter 016900 | Epoch 10.43 | Time 0.171 | GradNorm 5.68 | CG iters 6 (6.00) | Train logp -0.056621 (-0.022712)
+2024-03-19 17:46:48,964 - Iter 017000 | Epoch 10.49 | Time 0.177 | GradNorm 5.40 | CG iters 6 (6.00) | Train logp 0.166045 (0.141012)
+2024-03-19 17:46:59,813 - [VAL] Iter 017000 | Val logp nan | NoImproveEpochs 15/20
+2024-03-19 17:47:23,002 - Iter 017100 | Epoch 10.55 | Time 0.176 | GradNorm 5.87 | CG iters 6 (6.00) | Train logp 0.213849 (0.204189)
+2024-03-19 17:47:46,037 - Iter 017200 | Epoch 10.61 | Time 0.187 | GradNorm 6.24 | CG iters 6 (6.00) | Train logp 0.074616 (0.091800)
+2024-03-19 17:48:09,257 - Iter 017300 | Epoch 10.67 | Time 0.196 | GradNorm 5.80 | CG iters 6 (6.00) | Train logp 0.104502 (0.102817)
+2024-03-19 17:48:32,466 - Iter 017400 | Epoch 10.73 | Time 0.187 | GradNorm 5.79 | CG iters 6 (6.00) | Train logp 0.225315 (0.209069)
+2024-03-19 17:48:55,802 - Iter 017500 | Epoch 10.80 | Time 0.201 | GradNorm 5.85 | CG iters 6 (6.00) | Train logp 0.107238 (0.120743)
+2024-03-19 17:49:08,379 - [VAL] Iter 017500 | Val logp nan | NoImproveEpochs 16/20
+2024-03-19 17:49:31,713 - Iter 017600 | Epoch 10.86 | Time 0.173 | GradNorm 6.04 | CG iters 6 (6.00) | Train logp 0.208119 (0.196531)
+2024-03-19 17:49:54,957 - Iter 017700 | Epoch 10.92 | Time 0.185 | GradNorm 5.70 | CG iters 6 (6.00) | Train logp 0.212903 (0.210731)
+2024-03-19 17:50:18,311 - Iter 017800 | Epoch 10.98 | Time 0.183 | GradNorm 6.26 | CG iters 6 (6.00) | Train logp 0.125520 (0.136820)
+2024-03-19 17:50:41,845 - Iter 017900 | Epoch 11.04 | Time 0.191 | GradNorm 5.89 | CG iters 6 (6.00) | Train logp 0.174534 (0.169532)
+2024-03-19 17:51:05,213 - Iter 018000 | Epoch 11.10 | Time 0.185 | GradNorm 5.77 | CG iters 6 (6.00) | Train logp 0.109578 (0.117529)
+2024-03-19 17:51:16,136 - [VAL] Iter 018000 | Val logp nan | NoImproveEpochs 17/20
+2024-03-19 17:51:40,321 - Iter 018100 | Epoch 11.17 | Time 0.192 | GradNorm 5.39 | CG iters 6 (6.00) | Train logp 0.069903 (0.076219)
+2024-03-19 17:52:04,388 - Iter 018200 | Epoch 11.23 | Time 0.184 | GradNorm 5.56 | CG iters 6 (6.00) | Train logp 0.183340 (0.169133)
+2024-03-19 17:52:27,890 - Iter 018300 | Epoch 11.29 | Time 0.184 | GradNorm 5.68 | CG iters 6 (6.00) | Train logp 0.073527 (0.086207)
+2024-03-19 17:52:51,702 - Iter 018400 | Epoch 11.35 | Time 0.202 | GradNorm 5.80 | CG iters 6 (6.00) | Train logp 0.278037 (0.252597)
+2024-03-19 17:53:16,125 - Iter 018500 | Epoch 11.41 | Time 0.204 | GradNorm 5.84 | CG iters 6 (6.00) | Train logp 0.153139 (0.166329)
+2024-03-19 17:53:28,154 - [VAL] Iter 018500 | Val logp nan | NoImproveEpochs 18/20
+2024-03-19 17:53:51,385 - Iter 018600 | Epoch 11.47 | Time 0.172 | GradNorm 6.07 | CG iters 6 (6.00) | Train logp 0.049663 (0.065135)
+2024-03-19 17:54:14,814 - Iter 018700 | Epoch 11.54 | Time 0.181 | GradNorm 5.79 | CG iters 6 (6.00) | Train logp -0.007190 (0.002402)
+2024-03-19 17:54:38,204 - Iter 018800 | Epoch 11.60 | Time 0.200 | GradNorm 5.94 | CG iters 6 (6.00) | Train logp nan (nan)
+2024-03-19 17:55:01,579 - Iter 018900 | Epoch 11.66 | Time 0.183 | GradNorm 5.93 | CG iters 6 (6.00) | Train logp 0.352423 (nan)
+2024-03-19 17:55:24,979 - Iter 019000 | Epoch 11.72 | Time 0.179 | GradNorm 5.81 | CG iters 6 (6.00) | Train logp 0.155934 (nan)
+2024-03-19 17:55:35,804 - [VAL] Iter 019000 | Val logp nan | NoImproveEpochs 19/20
+2024-03-19 17:55:59,185 - Iter 019100 | Epoch 11.78 | Time 0.177 | GradNorm 5.71 | CG iters 6 (6.00) | Train logp 0.122460 (nan)
+2024-03-19 17:56:27,338 - Iter 019200 | Epoch 11.84 | Time 0.281 | GradNorm 5.75 | CG iters 6 (6.00) | Train logp 0.211356 (nan)
+2024-03-19 17:57:00,983 - Iter 019300 | Epoch 11.91 | Time 0.262 | GradNorm 5.84 | CG iters 6 (6.00) | Train logp 0.117691 (nan)
+2024-03-19 17:57:34,075 - Iter 019400 | Epoch 11.97 | Time 0.198 | GradNorm 5.62 | CG iters 6 (6.00) | Train logp 0.123417 (nan)
+2024-03-19 17:57:57,301 - Iter 019500 | Epoch 12.03 | Time 0.180 | GradNorm 5.89 | CG iters 6 (6.00) | Train logp 0.297834 (nan)
+2024-03-19 17:58:07,982 - [VAL] Iter 019500 | Val logp 0.146851 | NoImproveEpochs 00/20
+2024-03-19 17:58:31,118 - Iter 019600 | Epoch 12.09 | Time 0.171 | GradNorm 6.05 | CG iters 6 (6.00) | Train logp 0.290143 (nan)
+2024-03-19 17:58:54,332 - Iter 019700 | Epoch 12.15 | Time 0.176 | GradNorm 5.89 | CG iters 6 (6.00) | Train logp 0.101657 (nan)
+2024-03-19 17:59:17,585 - Iter 019800 | Epoch 12.21 | Time 0.181 | GradNorm 5.89 | CG iters 6 (6.00) | Train logp 0.122688 (nan)
+2024-03-19 17:59:40,873 - Iter 019900 | Epoch 12.28 | Time 0.178 | GradNorm 5.78 | CG iters 6 (6.00) | Train logp -0.015825 (nan)
+2024-03-19 18:00:04,182 - Iter 020000 | Epoch 12.34 | Time 0.179 | GradNorm 5.67 | CG iters 6 (6.00) | Train logp -0.011369 (nan)
+2024-03-19 18:00:14,892 - [VAL] Iter 020000 | Val logp nan | NoImproveEpochs 01/20
+2024-03-19 18:00:38,199 - Iter 020100 | Epoch 12.40 | Time 0.170 | GradNorm 6.32 | CG iters 6 (6.00) | Train logp 0.017359 (nan)
+2024-03-19 18:01:01,599 - Iter 020200 | Epoch 12.46 | Time 0.178 | GradNorm 6.36 | CG iters 6 (6.00) | Train logp 0.096366 (nan)
+2024-03-19 18:01:24,984 - Iter 020300 | Epoch 12.52 | Time 0.179 | GradNorm 5.58 | CG iters 6 (6.00) | Train logp 0.215362 (nan)
+2024-03-19 18:01:48,426 - Iter 020400 | Epoch 12.58 | Time 0.178 | GradNorm 5.91 | CG iters 6 (6.00) | Train logp 0.115124 (nan)
+2024-03-19 18:02:11,902 - Iter 020500 | Epoch 12.65 | Time 0.180 | GradNorm 5.99 | CG iters 6 (6.00) | Train logp 0.185198 (nan)
+2024-03-19 18:02:22,642 - [VAL] Iter 020500 | Val logp nan | NoImproveEpochs 02/20
+2024-03-19 18:02:46,065 - Iter 020600 | Epoch 12.71 | Time 0.171 | GradNorm 5.39 | CG iters 6 (6.00) | Train logp -0.075733 (nan)
+2024-03-19 18:03:09,590 - Iter 020700 | Epoch 12.77 | Time 0.178 | GradNorm 5.89 | CG iters 6 (6.00) | Train logp 0.166281 (nan)
+2024-03-19 18:03:33,129 - Iter 020800 | Epoch 12.83 | Time 0.176 | GradNorm 5.85 | CG iters 6 (6.00) | Train logp 0.349232 (nan)
+2024-03-19 18:03:56,708 - Iter 020900 | Epoch 12.89 | Time 0.182 | GradNorm 5.62 | CG iters 6 (6.00) | Train logp -0.036993 (nan)
+2024-03-19 18:04:20,311 - Iter 021000 | Epoch 12.95 | Time 0.179 | GradNorm 5.94 | CG iters 6 (6.00) | Train logp 0.059775 (nan)
+2024-03-19 18:04:31,069 - [VAL] Iter 021000 | Val logp nan | NoImproveEpochs 03/20
+2024-03-19 18:04:54,646 - Iter 021100 | Epoch 13.02 | Time 0.172 | GradNorm 6.29 | CG iters 6 (6.00) | Train logp 0.185655 (nan)
+2024-03-19 18:05:18,316 - Iter 021200 | Epoch 13.08 | Time 0.178 | GradNorm 5.65 | CG iters 6 (6.00) | Train logp 0.068946 (nan)
+2024-03-19 18:05:42,027 - Iter 021300 | Epoch 13.14 | Time 0.181 | GradNorm 5.77 | CG iters 6 (6.00) | Train logp 0.148555 (nan)
+2024-03-19 18:06:05,764 - Iter 021400 | Epoch 13.20 | Time 0.180 | GradNorm 5.99 | CG iters 6 (6.00) | Train logp 0.019605 (nan)
+2024-03-19 18:06:29,511 - Iter 021500 | Epoch 13.26 | Time 0.181 | GradNorm 6.32 | CG iters 6 (6.00) | Train logp 0.303632 (nan)
+2024-03-19 18:06:40,234 - [VAL] Iter 021500 | Val logp nan | NoImproveEpochs 04/20
+2024-03-19 18:07:03,984 - Iter 021600 | Epoch 13.33 | Time 0.171 | GradNorm 5.73 | CG iters 6 (6.00) | Train logp 0.157738 (nan)
+2024-03-19 18:07:27,814 - Iter 021700 | Epoch 13.39 | Time 0.179 | GradNorm 5.99 | CG iters 6 (6.00) | Train logp 0.117309 (nan)
+2024-03-19 18:07:51,663 - Iter 021800 | Epoch 13.45 | Time 0.179 | GradNorm 5.54 | CG iters 6 (6.00) | Train logp 0.092879 (nan)
+2024-03-19 18:08:15,517 - Iter 021900 | Epoch 13.51 | Time 0.173 | GradNorm 5.76 | CG iters 6 (6.00) | Train logp 0.252756 (nan)
+2024-03-19 18:08:39,422 - Iter 022000 | Epoch 13.57 | Time 0.178 | GradNorm 5.61 | CG iters 6 (6.00) | Train logp 0.261769 (nan)
+2024-03-19 18:08:50,130 - [VAL] Iter 022000 | Val logp nan | NoImproveEpochs 05/20
+2024-03-19 18:09:14,020 - Iter 022100 | Epoch 13.63 | Time 0.172 | GradNorm 5.64 | CG iters 6 (6.00) | Train logp 0.241834 (nan)
+2024-03-19 18:09:37,972 - Iter 022200 | Epoch 13.70 | Time 0.179 | GradNorm 5.92 | CG iters 6 (6.00) | Train logp 0.035894 (nan)
+2024-03-19 18:10:01,974 - Iter 022300 | Epoch 13.76 | Time 0.177 | GradNorm 5.86 | CG iters 6 (6.00) | Train logp 0.182348 (nan)
+2024-03-19 18:10:26,001 - Iter 022400 | Epoch 13.82 | Time 0.178 | GradNorm 5.82 | CG iters 6 (6.00) | Train logp 0.238108 (nan)
+2024-03-19 18:10:50,049 - Iter 022500 | Epoch 13.88 | Time 0.173 | GradNorm 5.50 | CG iters 6 (6.00) | Train logp 0.217198 (nan)
+2024-03-19 18:11:00,767 - [VAL] Iter 022500 | Val logp nan | NoImproveEpochs 06/20
+2024-03-19 18:11:24,816 - Iter 022600 | Epoch 13.94 | Time 0.171 | GradNorm 5.44 | CG iters 6 (6.00) | Train logp 0.208252 (nan)
+2024-03-19 18:11:49,212 - Iter 022700 | Epoch 14.00 | Time 0.175 | GradNorm 5.58 | CG iters 6 (6.00) | Train logp 0.165315 (nan)
+2024-03-19 18:12:14,775 - Iter 022800 | Epoch 14.07 | Time 0.177 | GradNorm 5.69 | CG iters 6 (6.00) | Train logp 0.195923 (nan)
+2024-03-19 18:12:40,077 - Iter 022900 | Epoch 14.13 | Time 0.173 | GradNorm 5.74 | CG iters 6 (6.00) | Train logp 0.162757 (nan)
+2024-03-19 18:13:04,450 - Iter 023000 | Epoch 14.19 | Time 0.177 | GradNorm 5.87 | CG iters 6 (6.00) | Train logp 0.071856 (nan)
+2024-03-19 18:13:15,308 - [VAL] Iter 023000 | Val logp nan | NoImproveEpochs 07/20
+2024-03-19 18:13:40,451 - Iter 023100 | Epoch 14.25 | Time 0.172 | GradNorm 5.91 | CG iters 6 (6.00) | Train logp 0.202918 (nan)
+2024-03-19 18:14:05,003 - Iter 023200 | Epoch 14.31 | Time 0.175 | GradNorm 5.66 | CG iters 6 (6.00) | Train logp 0.321708 (nan)
+2024-03-19 18:14:29,526 - Iter 023300 | Epoch 14.37 | Time 0.176 | GradNorm 6.40 | CG iters 6 (6.00) | Train logp 0.386987 (nan)
+2024-03-19 18:14:54,036 - Iter 023400 | Epoch 14.44 | Time 0.177 | GradNorm 5.52 | CG iters 6 (6.00) | Train logp 0.200131 (nan)
+2024-03-19 18:15:18,657 - Iter 023500 | Epoch 14.50 | Time 0.178 | GradNorm 6.07 | CG iters 6 (6.00) | Train logp 0.129319 (nan)
+2024-03-19 18:15:29,472 - [VAL] Iter 023500 | Val logp nan | NoImproveEpochs 08/20
+2024-03-19 18:15:54,031 - Iter 023600 | Epoch 14.56 | Time 0.172 | GradNorm 5.86 | CG iters 6 (6.00) | Train logp -0.008526 (nan)
+2024-03-19 18:16:18,654 - Iter 023700 | Epoch 14.62 | Time 0.177 | GradNorm 5.79 | CG iters 6 (6.00) | Train logp 0.183487 (nan)
+2024-03-19 18:16:43,321 - Iter 023800 | Epoch 14.68 | Time 0.178 | GradNorm 5.71 | CG iters 6 (6.00) | Train logp 0.264877 (nan)
+2024-03-19 18:17:07,866 - Iter 023900 | Epoch 14.74 | Time 0.176 | GradNorm 5.83 | CG iters 6 (6.00) | Train logp 0.109623 (nan)
+2024-03-19 18:17:32,463 - Iter 024000 | Epoch 14.81 | Time 0.176 | GradNorm 5.87 | CG iters 6 (6.00) | Train logp 0.272971 (nan)
+2024-03-19 18:17:43,232 - [VAL] Iter 024000 | Val logp nan | NoImproveEpochs 09/20
+2024-03-19 18:18:08,311 - Iter 024100 | Epoch 14.87 | Time 0.172 | GradNorm 5.79 | CG iters 6 (6.00) | Train logp 0.260740 (nan)
+2024-03-19 18:18:33,444 - Iter 024200 | Epoch 14.93 | Time 0.178 | GradNorm 5.73 | CG iters 6 (6.00) | Train logp 0.238172 (nan)
+2024-03-19 18:18:58,640 - Iter 024300 | Epoch 14.99 | Time 0.174 | GradNorm 6.09 | CG iters 6 (6.00) | Train logp 0.105867 (nan)
+2024-03-19 18:19:23,946 - Iter 024400 | Epoch 15.05 | Time 0.177 | GradNorm 5.72 | CG iters 6 (6.00) | Train logp 0.151109 (nan)
+2024-03-19 18:19:49,135 - Iter 024500 | Epoch 15.11 | Time 0.177 | GradNorm 5.56 | CG iters 6 (6.00) | Train logp 0.166985 (nan)
+2024-03-19 18:19:59,982 - [VAL] Iter 024500 | Val logp nan | NoImproveEpochs 10/20
+2024-03-19 18:20:25,746 - Iter 024600 | Epoch 15.18 | Time 0.169 | GradNorm 6.16 | CG iters 6 (6.00) | Train logp 0.236102 (nan)
+2024-03-19 18:20:50,671 - Iter 024700 | Epoch 15.24 | Time 0.174 | GradNorm 5.89 | CG iters 6 (6.00) | Train logp 0.028987 (nan)
+2024-03-19 18:21:16,115 - Iter 024800 | Epoch 15.30 | Time 0.180 | GradNorm 5.59 | CG iters 6 (6.00) | Train logp 0.033284 (nan)
+2024-03-19 18:21:41,630 - Iter 024900 | Epoch 15.36 | Time 0.177 | GradNorm 5.56 | CG iters 6 (6.00) | Train logp 0.140635 (nan)
+2024-03-19 18:22:06,646 - Iter 025000 | Epoch 15.42 | Time 0.178 | GradNorm 5.82 | CG iters 6 (6.00) | Train logp 0.149633 (nan)
+2024-03-19 18:22:17,408 - [VAL] Iter 025000 | Val logp nan | NoImproveEpochs 11/20
+2024-03-19 18:22:42,268 - Iter 025100 | Epoch 15.48 | Time 0.171 | GradNorm 5.56 | CG iters 6 (6.00) | Train logp 0.043898 (nan)
+2024-03-19 18:23:07,160 - Iter 025200 | Epoch 15.55 | Time 0.173 | GradNorm 5.74 | CG iters 6 (6.00) | Train logp 0.335290 (nan)
+2024-03-19 18:23:32,077 - Iter 025300 | Epoch 15.61 | Time 0.174 | GradNorm 6.35 | CG iters 6 (6.00) | Train logp 0.233683 (nan)
+2024-03-19 18:23:57,030 - Iter 025400 | Epoch 15.67 | Time 0.171 | GradNorm 5.78 | CG iters 6 (6.00) | Train logp 0.206205 (nan)
+2024-03-19 18:24:22,203 - Iter 025500 | Epoch 15.73 | Time 0.172 | GradNorm 5.97 | CG iters 6 (6.00) | Train logp 0.260075 (nan)
+2024-03-19 18:24:33,025 - [VAL] Iter 025500 | Val logp nan | NoImproveEpochs 12/20
+2024-03-19 18:24:58,704 - Iter 025600 | Epoch 15.79 | Time 0.172 | GradNorm 5.74 | CG iters 6 (6.00) | Train logp 0.329164 (nan)
+2024-03-19 18:25:23,929 - Iter 025700 | Epoch 15.85 | Time 0.178 | GradNorm 6.12 | CG iters 6 (6.00) | Train logp 0.308053 (nan)
+2024-03-19 18:25:49,411 - Iter 025800 | Epoch 15.92 | Time 0.173 | GradNorm 6.18 | CG iters 6 (6.00) | Train logp 0.070255 (nan)
+2024-03-19 18:26:14,985 - Iter 025900 | Epoch 15.98 | Time 0.187 | GradNorm 5.78 | CG iters 6 (6.00) | Train logp nan (nan)
+2024-03-19 18:26:40,274 - Iter 026000 | Epoch 16.04 | Time 0.178 | GradNorm 5.88 | CG iters 6 (6.00) | Train logp 0.129907 (nan)
+2024-03-19 18:26:51,104 - [VAL] Iter 026000 | Val logp nan | NoImproveEpochs 13/20
+2024-03-19 18:27:16,453 - Iter 026100 | Epoch 16.10 | Time 0.173 | GradNorm 5.66 | CG iters 6 (6.00) | Train logp 0.124151 (nan)
+2024-03-19 18:27:41,870 - Iter 026200 | Epoch 16.16 | Time 0.172 | GradNorm 6.19 | CG iters 6 (6.00) | Train logp 0.220096 (nan)
+2024-03-19 18:28:08,129 - Iter 026300 | Epoch 16.22 | Time 0.178 | GradNorm 6.03 | CG iters 6 (6.00) | Train logp 0.312521 (nan)
+2024-03-19 18:28:34,181 - Iter 026400 | Epoch 16.29 | Time 0.172 | GradNorm 5.53 | CG iters 6 (6.00) | Train logp 0.105912 (nan)
+2024-03-19 18:28:59,933 - Iter 026500 | Epoch 16.35 | Time 0.176 | GradNorm 5.97 | CG iters 6 (6.00) | Train logp 0.118695 (nan)
+2024-03-19 18:29:10,802 - [VAL] Iter 026500 | Val logp nan | NoImproveEpochs 14/20
+2024-03-19 18:29:36,558 - Iter 026600 | Epoch 16.41 | Time 0.175 | GradNorm 5.68 | CG iters 6 (6.00) | Train logp 0.159412 (nan)
+2024-03-19 18:30:02,585 - Iter 026700 | Epoch 16.47 | Time 0.175 | GradNorm 6.12 | CG iters 6 (6.00) | Train logp 0.197240 (nan)
+2024-03-19 18:30:28,579 - Iter 026800 | Epoch 16.53 | Time 0.182 | GradNorm 5.89 | CG iters 6 (6.00) | Train logp 0.100170 (nan)
+2024-03-19 18:30:54,407 - Iter 026900 | Epoch 16.59 | Time 0.172 | GradNorm 5.84 | CG iters 6 (6.00) | Train logp 0.103116 (nan)
+2024-03-19 18:31:20,518 - Iter 027000 | Epoch 16.66 | Time 0.187 | GradNorm 6.05 | CG iters 6 (6.00) | Train logp 0.186138 (nan)
+2024-03-19 18:31:31,353 - [VAL] Iter 027000 | Val logp nan | NoImproveEpochs 15/20
+2024-03-19 18:31:57,216 - Iter 027100 | Epoch 16.72 | Time 0.182 | GradNorm 6.33 | CG iters 6 (6.00) | Train logp 0.102930 (nan)
+2024-03-19 18:32:23,515 - Iter 027200 | Epoch 16.78 | Time 0.176 | GradNorm 5.62 | CG iters 6 (6.00) | Train logp 0.133754 (nan)
+2024-03-19 18:32:49,329 - Iter 027300 | Epoch 16.84 | Time 0.174 | GradNorm 5.88 | CG iters 6 (6.00) | Train logp 0.227959 (nan)
+2024-03-19 18:33:15,368 - Iter 027400 | Epoch 16.90 | Time 0.174 | GradNorm 5.87 | CG iters 6 (6.00) | Train logp 0.234941 (nan)
+2024-03-19 18:33:41,287 - Iter 027500 | Epoch 16.96 | Time 0.172 | GradNorm 5.86 | CG iters 6 (6.00) | Train logp 0.169225 (nan)
+2024-03-19 18:33:52,121 - [VAL] Iter 027500 | Val logp nan | NoImproveEpochs 16/20
+2024-03-19 18:34:17,942 - Iter 027600 | Epoch 17.03 | Time 0.172 | GradNorm 5.73 | CG iters 6 (6.00) | Train logp 0.039593 (nan)
+2024-03-19 18:34:43,867 - Iter 027700 | Epoch 17.09 | Time 0.174 | GradNorm 6.07 | CG iters 6 (6.00) | Train logp 0.195914 (nan)
+2024-03-19 18:35:09,837 - Iter 027800 | Epoch 17.15 | Time 0.174 | GradNorm 5.70 | CG iters 6 (6.00) | Train logp 0.289497 (nan)
+2024-03-19 18:35:35,840 - Iter 027900 | Epoch 17.21 | Time 0.173 | GradNorm 5.57 | CG iters 6 (6.00) | Train logp 0.284359 (nan)
+2024-03-19 18:36:01,846 - Iter 028000 | Epoch 17.27 | Time 0.175 | GradNorm 6.14 | CG iters 6 (6.00) | Train logp 0.080007 (nan)
+2024-03-19 18:36:12,663 - [VAL] Iter 028000 | Val logp nan | NoImproveEpochs 17/20
+2024-03-19 18:36:38,782 - Iter 028100 | Epoch 17.33 | Time 0.174 | GradNorm 5.86 | CG iters 6 (6.00) | Train logp 0.209959 (nan)
+2024-03-19 18:37:05,224 - Iter 028200 | Epoch 17.40 | Time 0.176 | GradNorm 5.77 | CG iters 6 (6.00) | Train logp 0.226716 (nan)
+2024-03-19 18:37:31,408 - Iter 028300 | Epoch 17.46 | Time 0.175 | GradNorm 6.20 | CG iters 6 (6.00) | Train logp 0.220642 (nan)
+2024-03-19 18:37:57,649 - Iter 028400 | Epoch 17.52 | Time 0.174 | GradNorm 6.07 | CG iters 6 (6.00) | Train logp 0.185513 (nan)
+2024-03-19 18:38:24,337 - Iter 028500 | Epoch 17.58 | Time 0.174 | GradNorm 5.57 | CG iters 6 (6.00) | Train logp 0.224417 (nan)
+2024-03-19 18:38:35,185 - [VAL] Iter 028500 | Val logp nan | NoImproveEpochs 18/20
+2024-03-19 18:39:01,795 - Iter 028600 | Epoch 17.64 | Time 0.174 | GradNorm 5.73 | CG iters 6 (6.00) | Train logp 0.230117 (nan)
+2024-03-19 18:39:28,219 - Iter 028700 | Epoch 17.70 | Time 0.198 | GradNorm 5.52 | CG iters 6 (6.00) | Train logp 0.190327 (nan)
+2024-03-19 18:39:54,872 - Iter 028800 | Epoch 17.77 | Time 0.174 | GradNorm 6.01 | CG iters 6 (6.00) | Train logp 0.072234 (nan)
+2024-03-19 18:40:21,166 - Iter 028900 | Epoch 17.83 | Time 0.175 | GradNorm 5.58 | CG iters 6 (6.00) | Train logp 0.311071 (nan)
+2024-03-19 18:40:47,807 - Iter 029000 | Epoch 17.89 | Time 0.177 | GradNorm 5.60 | CG iters 6 (6.00) | Train logp 0.129135 (nan)
+2024-03-19 18:40:58,602 - [VAL] Iter 029000 | Val logp nan | NoImproveEpochs 19/20
+2024-03-19 18:41:24,815 - Iter 029100 | Epoch 17.95 | Time 0.172 | GradNorm 5.54 | CG iters 6 (6.00) | Train logp 0.119470 (nan)
+2024-03-19 18:41:51,090 - Iter 029200 | Epoch 18.01 | Time 0.174 | GradNorm 5.98 | CG iters 6 (6.00) | Train logp 0.057710 (nan)
+2024-03-19 18:42:17,872 - Iter 029300 | Epoch 18.08 | Time 0.174 | GradNorm 5.72 | CG iters 6 (6.00) | Train logp 0.268294 (nan)
+2024-03-19 18:42:44,246 - Iter 029400 | Epoch 18.14 | Time 0.175 | GradNorm 6.36 | CG iters 6 (6.00) | Train logp 0.426111 (nan)
+2024-03-19 18:43:10,634 - Iter 029500 | Epoch 18.20 | Time 0.176 | GradNorm 6.37 | CG iters 6 (6.00) | Train logp -0.030724 (nan)
+2024-03-19 18:43:21,434 - [VAL] Iter 029500 | Val logp nan | NoImproveEpochs 20/20
+2024-03-19 18:43:47,881 - Iter 029600 | Epoch 18.26 | Time 0.188 | GradNorm 5.76 | CG iters 6 (6.00) | Train logp 0.108134 (nan)
+2024-03-19 18:44:14,704 - Iter 029700 | Epoch 18.32 | Time 0.178 | GradNorm 5.94 | CG iters 6 (6.00) | Train logp 0.135885 (nan)
+2024-03-19 18:44:41,892 - Iter 029800 | Epoch 18.38 | Time 0.175 | GradNorm 6.05 | CG iters 6 (6.00) | Train logp 0.069989 (nan)
+2024-03-19 18:45:08,450 - Iter 029900 | Epoch 18.45 | Time 0.174 | GradNorm 6.03 | CG iters 6 (6.00) | Train logp 0.162948 (nan)
+2024-03-19 18:45:35,063 - Iter 030000 | Epoch 18.51 | Time 0.176 | GradNorm 5.83 | CG iters 6 (6.00) | Train logp 0.156053 (nan)
+2024-03-19 18:45:45,978 - [VAL] Iter 030000 | Val logp nan | NoImproveEpochs 21/20
+2024-03-19 18:45:45,980 - Training has finished, yielding the best model...
+2024-03-19 18:45:45,989 - Evaluating model on test set.
+2024-03-19 18:45:55,870 - [TEST] Iter 000200 | Test logp 0.131982
+2024-03-21 18:18:16,922 - Namespace(data='power', arch='icnn2', softplus_type='softplus', zero_softplus=False, symm_act_first=False, trainable_w0=True, clip_grad=0, preload_data=False, dimh=512, nhidden=5, nblocks=10, nepochs=1000, early_stopping=20, batch_size=1024, val_batch_size=1024, test_batch_size=1024, lr=0.001, wd=1e-06, atol=0.001, rtol=0.0, cuda=None, seed=0, data_root='data/', resume=None, save='experiments/power', evaluate=False, fp64=False, val_freq=500, brute_val=False, log_freq=100, train_est_freq=100)
+2024-03-21 18:18:16,963 - Using GPU: None of the 2
+2024-03-21 18:18:19,929 - SequentialFlow(
+  (flows): ModuleList(
+    (0): ActNorm(6)
+    (1): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (2): ActNorm(6)
+    (3): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (4): ActNorm(6)
+    (5): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (6): ActNorm(6)
+    (7): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (8): ActNorm(6)
+    (9): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (10): ActNorm(6)
+    (11): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (12): ActNorm(6)
+    (13): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (14): ActNorm(6)
+    (15): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (16): ActNorm(6)
+    (17): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (18): ActNorm(6)
+    (19): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (20): ActNorm(6)
+  )
+)
+2024-03-21 18:18:19,932 - Number of trainable parameters:10741992
+2024-03-21 18:18:24,246 - Iter 000000 | Epoch 0.00 | Time 4.161 | GradNorm 0.79 | CG iters 20 (20.00) | Train logp -7.766046 (-7.766046)
+2024-03-21 18:21:06,713 - [VAL] Iter 000000 | Val logp -7.626729 | NoImproveEpochs 00/20
+2024-03-21 18:25:18,465 - Iter 000100 | Epoch 0.06 | Time 3.723 | GradNorm 2.82 | CG iters 30 (26.62) | Train logp -3.864719 (-4.382112)
+2024-03-21 18:30:56,762 - Iter 000200 | Epoch 0.12 | Time 6.919 | GradNorm 3.83 | CG iters 35 (33.49) | Train logp -2.585568 (-2.823825)
+2024-03-21 18:34:52,396 - Iter 000300 | Epoch 0.19 | Time 3.305 | GradNorm 4.78 | CG iters 36 (35.67) | Train logp -2.438559 (-2.489652)
+2024-03-21 18:39:59,306 - Iter 000400 | Epoch 0.25 | Time 3.268 | GradNorm 4.95 | CG iters 38 (37.15) | Train logp -1.951112 (-2.022533)
+2024-03-21 18:44:56,726 - Iter 000500 | Epoch 0.31 | Time 3.312 | GradNorm 5.45 | CG iters 38 (37.89) | Train logp -1.296700 (-1.392960)
+2024-03-21 18:50:03,989 - [VAL] Iter 000500 | Val logp -1.641768 | NoImproveEpochs 00/20
+2024-03-21 18:54:12,269 - Iter 000600 | Epoch 0.37 | Time 3.272 | GradNorm 7.62 | CG iters 38 (38.05) | Train logp -1.441748 (-1.435277)
+2024-03-21 18:59:00,719 - Iter 000700 | Epoch 0.43 | Time 3.328 | GradNorm 6.27 | CG iters 40 (38.96) | Train logp -1.115044 (-1.157513)
+2024-03-21 19:02:31,601 - Iter 000800 | Epoch 0.49 | Time 3.702 | GradNorm 7.52 | CG iters 42 (41.08) | Train logp -1.329665 (-1.306834)
+2024-03-21 19:07:35,217 - Iter 000900 | Epoch 0.56 | Time 3.221 | GradNorm 7.63 | CG iters 42 (41.95) | Train logp -0.990228 (-1.032216)
+2024-03-21 19:12:24,814 - Iter 001000 | Epoch 0.62 | Time 3.285 | GradNorm 8.18 | CG iters 43 (42.27) | Train logp -0.793407 (-0.825077)
+2024-03-21 19:16:34,176 - [VAL] Iter 001000 | Val logp -0.789460 | NoImproveEpochs 00/20
+2024-03-21 19:21:26,117 - Iter 001100 | Epoch 0.68 | Time 3.630 | GradNorm 7.49 | CG iters 43 (42.73) | Train logp -0.799335 (-0.802749)
+2024-03-21 19:26:02,312 - Iter 001200 | Epoch 0.74 | Time 6.166 | GradNorm 10.05 | CG iters 43 (42.98) | Train logp -0.699593 (-0.713274)
+2024-03-21 19:30:31,424 - Iter 001300 | Epoch 0.80 | Time 3.069 | GradNorm 9.57 | CG iters 43 (43.14) | Train logp -0.637751 (-0.647767)
+2024-03-21 19:35:29,343 - Iter 001400 | Epoch 0.86 | Time 3.204 | GradNorm 12.11 | CG iters 44 (43.53) | Train logp -0.706293 (-0.698531)
+2024-03-21 19:39:35,309 - Iter 001500 | Epoch 0.93 | Time 3.015 | GradNorm 11.86 | CG iters 43 (43.81) | Train logp -0.247793 (-0.307570)
+2024-03-21 19:44:19,424 - [VAL] Iter 001500 | Val logp -0.455966 | NoImproveEpochs 00/20
+2024-03-21 19:49:08,842 - Iter 001600 | Epoch 0.99 | Time 5.577 | GradNorm 13.66 | CG iters 44 (43.97) | Train logp -0.546823 (-0.515093)
+2024-03-21 19:52:41,403 - Iter 001700 | Epoch 1.05 | Time 3.027 | GradNorm 12.72 | CG iters 44 (43.98) | Train logp -0.318579 (-0.344640)
+2024-03-21 19:57:48,106 - Iter 001800 | Epoch 1.11 | Time 5.040 | GradNorm 13.49 | CG iters 44 (44.00) | Train logp -0.474258 (-0.457068)
+2024-03-21 20:02:10,137 - Iter 001900 | Epoch 1.17 | Time 14.567 | GradNorm 12.26 | CG iters 44 (44.00) | Train logp -0.325965 (-0.343352)
+2024-03-21 20:06:41,822 - Iter 002000 | Epoch 1.23 | Time 3.351 | GradNorm 13.23 | CG iters 44 (44.00) | Train logp -0.352412 (-0.351210)
+2024-03-21 20:11:23,201 - [VAL] Iter 002000 | Val logp -0.296300 | NoImproveEpochs 00/20
+2024-03-21 20:15:29,226 - Iter 002100 | Epoch 1.30 | Time 3.337 | GradNorm 14.42 | CG iters 44 (44.00) | Train logp -0.216450 (-0.234322)
+2024-03-21 20:20:21,651 - Iter 002200 | Epoch 1.36 | Time 3.472 | GradNorm 14.62 | CG iters 44 (44.00) | Train logp -0.179386 (-0.186671)
+2024-03-21 20:24:25,909 - Iter 002300 | Epoch 1.42 | Time 4.860 | GradNorm 14.71 | CG iters 44 (44.00) | Train logp -0.507638 (-0.465072)
+2024-03-21 20:28:47,186 - Iter 002400 | Epoch 1.48 | Time 4.826 | GradNorm 14.29 | CG iters 44 (44.00) | Train logp -0.095432 (-0.144454)
+2024-03-21 20:33:00,516 - Iter 002500 | Epoch 1.54 | Time 5.690 | GradNorm 14.89 | CG iters 44 (44.00) | Train logp -0.257946 (-0.242895)
+2024-03-21 20:37:22,927 - [VAL] Iter 002500 | Val logp -0.212516 | NoImproveEpochs 00/20
+2024-03-21 20:42:05,213 - Iter 002600 | Epoch 1.60 | Time 3.210 | GradNorm 13.46 | CG iters 44 (43.99) | Train logp -0.181035 (-0.189239)
+2024-03-21 20:46:09,724 - Iter 002700 | Epoch 1.67 | Time 3.227 | GradNorm 15.36 | CG iters 44 (43.99) | Train logp -0.309319 (-0.293394)
+2024-03-21 20:51:06,633 - Iter 002800 | Epoch 1.73 | Time 3.442 | GradNorm 14.19 | CG iters 44 (43.91) | Train logp -0.164694 (-0.181762)
+2024-03-21 20:55:52,686 - Iter 002900 | Epoch 1.79 | Time 3.189 | GradNorm 16.08 | CG iters 44 (43.93) | Train logp 0.007690 (-0.017435)
+2024-03-21 20:59:57,507 - Iter 003000 | Epoch 1.85 | Time 3.086 | GradNorm 14.10 | CG iters 44 (43.90) | Train logp -0.125855 (-0.111477)
+2024-03-21 21:04:32,523 - [VAL] Iter 003000 | Val logp -0.110569 | NoImproveEpochs 00/20
+2024-03-21 21:08:14,764 - Iter 003100 | Epoch 1.91 | Time 5.541 | GradNorm 15.77 | CG iters 44 (43.79) | Train logp -0.296571 (-0.272024)
+2024-03-21 21:12:54,583 - Iter 003200 | Epoch 1.97 | Time 2.382 | GradNorm 17.59 | CG iters 44 (43.75) | Train logp -0.165020 (-0.179211)
+2024-03-21 21:16:13,163 - Iter 003300 | Epoch 2.04 | Time 2.668 | GradNorm 14.96 | CG iters 43 (43.46) | Train logp 0.122444 (0.082439)
+2024-03-21 21:19:25,406 - Iter 003400 | Epoch 2.10 | Time 2.512 | GradNorm 15.31 | CG iters 43 (43.38) | Train logp -0.106206 (-0.081188)
+2024-03-21 21:22:29,138 - Iter 003500 | Epoch 2.16 | Time 2.388 | GradNorm 16.62 | CG iters 43 (43.22) | Train logp -0.011228 (-0.020506)
+2024-03-21 21:25:21,580 - [VAL] Iter 003500 | Val logp -0.084172 | NoImproveEpochs 00/20
+2024-03-21 21:28:40,127 - Iter 003600 | Epoch 2.22 | Time 2.373 | GradNorm 17.49 | CG iters 43 (43.24) | Train logp -0.192635 (-0.169807)
+2024-03-21 21:31:53,336 - Iter 003700 | Epoch 2.28 | Time 3.559 | GradNorm 17.80 | CG iters 43 (43.13) | Train logp 0.089767 (0.055342)
+2024-03-21 21:34:42,954 - Iter 003800 | Epoch 2.34 | Time 2.378 | GradNorm 17.66 | CG iters 43 (43.11) | Train logp -0.049637 (-0.035715)
+2024-03-21 21:38:11,838 - Iter 003900 | Epoch 2.41 | Time 2.376 | GradNorm 16.27 | CG iters 43 (43.06) | Train logp 0.015593 (0.008789)
+2024-03-21 21:41:28,511 - Iter 004000 | Epoch 2.47 | Time 10.036 | GradNorm 15.25 | CG iters 43 (43.11) | Train logp 0.052357 (0.046579)
+2024-03-21 21:44:07,370 - [VAL] Iter 004000 | Val logp 0.032077 | NoImproveEpochs 00/20
+2024-03-21 21:47:29,248 - Iter 004100 | Epoch 2.53 | Time 2.376 | GradNorm 17.68 | CG iters 43 (43.08) | Train logp -0.000547 (0.005703)
+2024-03-21 21:50:33,093 - Iter 004200 | Epoch 2.59 | Time 2.407 | GradNorm 17.57 | CG iters 44 (43.06) | Train logp 0.151161 (0.131871)
+2024-03-21 21:53:41,843 - Iter 004300 | Epoch 2.65 | Time 2.565 | GradNorm 18.48 | CG iters 43 (43.10) | Train logp -0.283726 (-0.228609)
+2024-03-21 21:57:20,113 - Iter 004400 | Epoch 2.71 | Time 2.387 | GradNorm 15.06 | CG iters 43 (43.10) | Train logp -0.010028 (-0.039016)
+2024-03-21 22:00:07,121 - Iter 004500 | Epoch 2.78 | Time 2.395 | GradNorm 17.52 | CG iters 43 (43.12) | Train logp 0.121513 (0.100223)
+2024-03-21 22:03:23,815 - [VAL] Iter 004500 | Val logp 0.045770 | NoImproveEpochs 00/20
+2024-03-21 22:06:32,010 - Iter 004600 | Epoch 2.84 | Time 2.399 | GradNorm 20.90 | CG iters 43 (43.12) | Train logp -0.158608 (-0.124282)
+2024-03-21 22:09:54,180 - Iter 004700 | Epoch 2.90 | Time 3.472 | GradNorm 17.06 | CG iters 43 (43.19) | Train logp 0.029048 (0.008713)
+2024-03-21 22:12:59,207 - Iter 004800 | Epoch 2.96 | Time 2.540 | GradNorm 17.75 | CG iters 43 (43.30) | Train logp 0.104646 (0.091923)
+2024-03-21 22:16:38,445 - Iter 004900 | Epoch 3.02 | Time 2.410 | GradNorm 19.91 | CG iters 43 (43.01) | Train logp 0.178553 (0.167064)
+2024-03-21 22:19:34,235 - Iter 005000 | Epoch 3.08 | Time 3.475 | GradNorm 17.27 | CG iters 43 (43.13) | Train logp 0.039510 (0.056426)
+2024-03-21 22:22:50,866 - [VAL] Iter 005000 | Val logp 0.069178 | NoImproveEpochs 00/20
+2024-03-21 22:26:05,803 - Iter 005100 | Epoch 3.15 | Time 2.668 | GradNorm 17.55 | CG iters 43 (43.17) | Train logp -0.000304 (0.007220)
+2024-03-21 22:29:57,060 - Iter 005200 | Epoch 3.21 | Time 3.533 | GradNorm 17.17 | CG iters 42 (43.19) | Train logp 0.116625 (0.102116)
+2024-03-21 22:33:06,274 - Iter 005300 | Epoch 3.27 | Time 3.504 | GradNorm 17.82 | CG iters 43 (43.22) | Train logp -0.053808 (-0.033130)
+2024-03-21 22:36:28,618 - Iter 005400 | Epoch 3.33 | Time 2.561 | GradNorm 17.62 | CG iters 42 (43.24) | Train logp 0.388492 (0.332577)
+2024-03-21 22:40:19,660 - Iter 005500 | Epoch 3.39 | Time 2.444 | GradNorm 19.02 | CG iters 44 (43.00) | Train logp 0.150015 (0.174226)
+2024-03-21 22:42:49,847 - [VAL] Iter 005500 | Val logp 0.069141 | NoImproveEpochs 01/20
+2024-03-21 22:46:14,403 - Iter 005600 | Epoch 3.45 | Time 3.738 | GradNorm 17.76 | CG iters 43 (42.94) | Train logp 0.008267 (0.030276)
+2024-03-21 22:49:31,345 - Iter 005700 | Epoch 3.52 | Time 2.400 | GradNorm 20.64 | CG iters 42 (42.99) | Train logp 0.378027 (0.331909)
+2024-03-21 22:53:11,257 - Iter 005800 | Epoch 3.58 | Time 3.615 | GradNorm 19.98 | CG iters 42 (42.92) | Train logp 0.060513 (0.096505)
+2024-03-21 22:56:17,686 - Iter 005900 | Epoch 3.64 | Time 2.937 | GradNorm 20.20 | CG iters 43 (43.11) | Train logp -0.046663 (-0.027676)
+2024-03-21 23:00:02,291 - Iter 006000 | Epoch 3.70 | Time 2.760 | GradNorm 18.23 | CG iters 43 (42.98) | Train logp 0.227549 (0.193701)
+2024-03-22 16:23:17,249 - Namespace(data='power', arch='icnn2', softplus_type='softplus', zero_softplus=False, symm_act_first=False, trainable_w0=True, clip_grad=0, preload_data=False, dimh=512, nhidden=5, nblocks=10, nepochs=1000, early_stopping=20, batch_size=1024, val_batch_size=1024, test_batch_size=1024, lr=0.001, wd=1e-06, atol=0.001, rtol=0.0, cuda=None, seed=0, data_root='data/', resume=None, save='experiments/power', evaluate=False, fp64=False, val_freq=500, brute_val=False, log_freq=100, train_est_freq=100)
+2024-03-22 16:23:17,293 - Using GPU: None of the 2
+2024-03-22 16:23:20,352 - SequentialFlow(
+  (flows): ModuleList(
+    (0): ActNorm(6)
+    (1): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (2): ActNorm(6)
+    (3): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (4): ActNorm(6)
+    (5): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (6): ActNorm(6)
+    (7): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (8): ActNorm(6)
+    (9): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (10): ActNorm(6)
+    (11): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (12): ActNorm(6)
+    (13): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (14): ActNorm(6)
+    (15): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (16): ActNorm(6)
+    (17): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (18): ActNorm(6)
+    (19): DeepConvexFlow(
+      ConjGrad(rtol=0.0, atol=0.001)
+      (icnn): ICNN2(
+        (act): Softplus()
+        (Wzs): ModuleList(
+          (0): Linear(in_features=6, out_features=512, bias=True)
+          (1-4): 4 x PosLinear(in_features=512, out_features=512, bias=True)
+          (5): PosLinear(in_features=512, out_features=1, bias=False)
+        )
+        (Wxs): ModuleList(
+          (0-3): 4 x Linear(in_features=6, out_features=512, bias=True)
+          (4): Linear(in_features=6, out_features=1, bias=False)
+        )
+        (actnorm0): ActNormNoLogdet(512)
+        (actnorms): ModuleList(
+          (0-3): 4 x ActNormNoLogdet(512)
+          (4): ActNormNoLogdet(1)
+        )
+      )
+    )
+    (20): ActNorm(6)
+  )
+)
+2024-03-22 16:23:20,354 - Number of trainable parameters:10741992
+2024-03-22 16:23:23,865 - Iter 000000 | Epoch 0.00 | Time 3.357 | GradNorm 0.79 | CG iters 20 (20.00) | Train logp -7.766046 (-7.766046)
+2024-03-22 16:26:28,232 - [VAL] Iter 000000 | Val logp -7.626729 | NoImproveEpochs 00/20
+2024-03-22 16:29:18,419 - Iter 000100 | Epoch 0.06 | Time 2.672 | GradNorm 2.82 | CG iters 30 (26.62) | Train logp -3.864719 (-4.382112)
+2024-03-22 16:32:11,760 - Iter 000200 | Epoch 0.12 | Time 2.756 | GradNorm 3.83 | CG iters 35 (33.49) | Train logp -2.585568 (-2.823825)
+2024-03-22 16:35:14,015 - Iter 000300 | Epoch 0.19 | Time 2.725 | GradNorm 4.78 | CG iters 36 (35.67) | Train logp -2.438559 (-2.489652)
+2024-03-22 16:38:05,877 - Iter 000400 | Epoch 0.25 | Time 2.773 | GradNorm 4.95 | CG iters 38 (37.15) | Train logp -1.951112 (-2.022533)
+2024-03-22 16:41:23,764 - Iter 000500 | Epoch 0.31 | Time 3.160 | GradNorm 5.45 | CG iters 38 (37.89) | Train logp -1.296700 (-1.392960)
+2024-03-22 16:44:53,793 - [VAL] Iter 000500 | Val logp -1.641768 | NoImproveEpochs 00/20
+2024-03-22 16:47:58,126 - Iter 000600 | Epoch 0.37 | Time 2.925 | GradNorm 7.62 | CG iters 38 (38.05) | Train logp -1.441748 (-1.435277)
+2024-03-22 16:51:09,950 - Iter 000700 | Epoch 0.43 | Time 2.834 | GradNorm 6.27 | CG iters 40 (38.96) | Train logp -1.115044 (-1.157513)
+2024-03-22 16:54:13,999 - Iter 000800 | Epoch 0.49 | Time 3.347 | GradNorm 7.52 | CG iters 42 (41.08) | Train logp -1.329665 (-1.306834)
+2024-03-22 16:57:19,894 - Iter 000900 | Epoch 0.56 | Time 2.735 | GradNorm 7.63 | CG iters 42 (41.95) | Train logp -0.990228 (-1.032216)
+2024-03-22 17:00:30,796 - Iter 001000 | Epoch 0.62 | Time 3.071 | GradNorm 8.18 | CG iters 43 (42.27) | Train logp -0.793407 (-0.825077)
+2024-03-22 17:02:56,345 - [VAL] Iter 001000 | Val logp -0.789460 | NoImproveEpochs 00/20
+2024-03-22 17:06:26,356 - Iter 001100 | Epoch 0.68 | Time 3.240 | GradNorm 7.49 | CG iters 43 (42.73) | Train logp -0.799335 (-0.802749)
+2024-03-22 17:09:55,926 - Iter 001200 | Epoch 0.74 | Time 2.418 | GradNorm 10.05 | CG iters 43 (42.98) | Train logp -0.699593 (-0.713274)
+2024-03-22 17:12:32,391 - Iter 001300 | Epoch 0.80 | Time 2.444 | GradNorm 9.57 | CG iters 43 (43.14) | Train logp -0.637751 (-0.647767)
+2024-03-22 17:15:35,145 - Iter 001400 | Epoch 0.86 | Time 3.028 | GradNorm 12.11 | CG iters 44 (43.53) | Train logp -0.706293 (-0.698531)
+2024-03-22 17:18:51,900 - Iter 001500 | Epoch 0.93 | Time 3.014 | GradNorm 11.86 | CG iters 43 (43.81) | Train logp -0.247793 (-0.307570)
+2024-03-22 17:22:11,367 - [VAL] Iter 001500 | Val logp -0.455966 | NoImproveEpochs 00/20
+2024-03-22 17:25:40,452 - Iter 001600 | Epoch 0.99 | Time 3.508 | GradNorm 13.66 | CG iters 44 (43.97) | Train logp -0.546823 (-0.515093)
+2024-03-22 17:28:45,637 - Iter 001700 | Epoch 1.05 | Time 2.796 | GradNorm 12.72 | CG iters 44 (43.98) | Train logp -0.318579 (-0.344640)
+2024-03-22 17:32:03,289 - Iter 001800 | Epoch 1.11 | Time 2.885 | GradNorm 13.49 | CG iters 44 (44.00) | Train logp -0.474258 (-0.457068)
+2024-03-22 17:35:13,009 - Iter 001900 | Epoch 1.17 | Time 2.891 | GradNorm 12.26 | CG iters 44 (44.00) | Train logp -0.325965 (-0.343352)
+2024-03-22 17:38:21,774 - Iter 002000 | Epoch 1.23 | Time 2.626 | GradNorm 13.23 | CG iters 44 (44.00) | Train logp -0.352412 (-0.351210)
+2024-03-22 17:40:52,568 - [VAL] Iter 002000 | Val logp -0.296300 | NoImproveEpochs 00/20
+2024-03-22 17:43:30,038 - Iter 002100 | Epoch 1.30 | Time 2.413 | GradNorm 14.42 | CG iters 44 (44.00) | Train logp -0.216450 (-0.234322)
+2024-03-22 17:46:21,747 - Iter 002200 | Epoch 1.36 | Time 2.417 | GradNorm 14.62 | CG iters 44 (44.00) | Train logp -0.179386 (-0.186671)
+2024-03-22 17:49:25,240 - Iter 002300 | Epoch 1.42 | Time 3.536 | GradNorm 14.71 | CG iters 44 (44.00) | Train logp -0.507638 (-0.465072)
+2024-03-22 17:52:34,667 - Iter 002400 | Epoch 1.48 | Time 2.418 | GradNorm 14.29 | CG iters 44 (44.00) | Train logp -0.095432 (-0.144454)
+2024-03-22 17:56:06,835 - Iter 002500 | Epoch 1.54 | Time 2.414 | GradNorm 14.89 | CG iters 44 (44.00) | Train logp -0.257946 (-0.242895)
+2024-03-22 17:58:32,076 - [VAL] Iter 002500 | Val logp -0.212516 | NoImproveEpochs 00/20
+2024-03-22 18:02:05,935 - Iter 002600 | Epoch 1.60 | Time 2.408 | GradNorm 13.46 | CG iters 44 (43.99) | Train logp -0.181035 (-0.189239)
+2024-03-22 18:04:47,067 - Iter 002700 | Epoch 1.67 | Time 2.410 | GradNorm 15.36 | CG iters 44 (43.99) | Train logp -0.309319 (-0.293394)
+2024-03-22 18:08:28,159 - Iter 002800 | Epoch 1.73 | Time 2.413 | GradNorm 14.19 | CG iters 44 (43.91) | Train logp -0.164694 (-0.181762)
+2024-03-22 18:12:03,628 - Iter 002900 | Epoch 1.79 | Time 2.518 | GradNorm 16.08 | CG iters 44 (43.93) | Train logp 0.007690 (-0.017435)
+2024-03-22 18:14:46,836 - Iter 003000 | Epoch 1.85 | Time 2.412 | GradNorm 14.10 | CG iters 44 (43.90) | Train logp -0.125855 (-0.111477)
+2024-03-22 18:18:01,567 - [VAL] Iter 003000 | Val logp -0.110569 | NoImproveEpochs 00/20
+2024-03-22 18:20:55,329 - Iter 003100 | Epoch 1.91 | Time 3.442 | GradNorm 15.77 | CG iters 44 (43.79) | Train logp -0.296571 (-0.272024)
+2024-03-22 18:24:09,941 - Iter 003200 | Epoch 1.97 | Time 2.411 | GradNorm 17.59 | CG iters 44 (43.75) | Train logp -0.165020 (-0.179211)
+2024-03-22 18:27:20,970 - Iter 003300 | Epoch 2.04 | Time 3.455 | GradNorm 14.96 | CG iters 43 (43.46) | Train logp 0.122444 (0.082439)
+2024-03-22 18:30:47,330 - Iter 003400 | Epoch 2.10 | Time 3.588 | GradNorm 15.31 | CG iters 43 (43.38) | Train logp -0.106206 (-0.081188)
+2024-03-22 18:33:38,326 - Iter 003500 | Epoch 2.16 | Time 2.386 | GradNorm 16.62 | CG iters 43 (43.22) | Train logp -0.011228 (-0.020506)
+2024-03-22 18:36:48,023 - [VAL] Iter 003500 | Val logp -0.084172 | NoImproveEpochs 00/20
+2024-03-22 18:39:51,086 - Iter 003600 | Epoch 2.22 | Time 2.871 | GradNorm 17.49 | CG iters 43 (43.24) | Train logp -0.192635 (-0.169807)
+2024-03-22 18:43:00,085 - Iter 003700 | Epoch 2.28 | Time 3.039 | GradNorm 17.80 | CG iters 43 (43.13) | Train logp 0.089767 (0.055342)
+2024-03-22 18:46:13,628 - Iter 003800 | Epoch 2.34 | Time 3.577 | GradNorm 17.66 | CG iters 43 (43.11) | Train logp -0.049637 (-0.035715)
+2024-03-22 18:49:33,415 - Iter 003900 | Epoch 2.41 | Time 3.021 | GradNorm 16.27 | CG iters 43 (43.06) | Train logp 0.015593 (0.008789)
+2024-03-22 18:52:39,599 - Iter 004000 | Epoch 2.47 | Time 2.399 | GradNorm 15.25 | CG iters 43 (43.11) | Train logp 0.052357 (0.046579)
+2024-03-22 18:55:25,251 - [VAL] Iter 004000 | Val logp 0.032077 | NoImproveEpochs 00/20
+2024-03-22 18:58:41,455 - Iter 004100 | Epoch 2.53 | Time 3.567 | GradNorm 17.68 | CG iters 43 (43.08) | Train logp -0.000547 (0.005703)
+2024-03-22 19:01:38,292 - Iter 004200 | Epoch 2.59 | Time 3.524 | GradNorm 17.57 | CG iters 44 (43.06) | Train logp 0.151161 (0.131871)
+2024-03-22 19:05:02,572 - Iter 004300 | Epoch 2.65 | Time 2.405 | GradNorm 18.48 | CG iters 43 (43.10) | Train logp -0.283726 (-0.228609)
+2024-03-22 19:08:37,203 - Iter 004400 | Epoch 2.71 | Time 2.399 | GradNorm 15.06 | CG iters 43 (43.10) | Train logp -0.010028 (-0.039016)
+2024-03-22 19:11:55,070 - Iter 004500 | Epoch 2.78 | Time 10.014 | GradNorm 17.52 | CG iters 43 (43.12) | Train logp 0.121513 (0.100223)
+2024-03-22 19:14:45,519 - [VAL] Iter 004500 | Val logp 0.045770 | NoImproveEpochs 00/20
+2024-03-22 19:18:09,135 - Iter 004600 | Epoch 2.84 | Time 2.378 | GradNorm 20.90 | CG iters 43 (43.12) | Train logp -0.158608 (-0.124282)
+2024-03-22 19:21:18,038 - Iter 004700 | Epoch 2.90 | Time 3.425 | GradNorm 17.06 | CG iters 43 (43.19) | Train logp 0.029048 (0.008713)
+2024-03-22 19:24:22,564 - Iter 004800 | Epoch 2.96 | Time 2.421 | GradNorm 17.75 | CG iters 43 (43.30) | Train logp 0.104646 (0.091923)
+2024-03-22 19:28:01,413 - Iter 004900 | Epoch 3.02 | Time 2.397 | GradNorm 19.91 | CG iters 43 (43.01) | Train logp 0.178553 (0.167064)
+2024-03-22 19:30:49,503 - Iter 005000 | Epoch 3.08 | Time 2.398 | GradNorm 17.27 | CG iters 43 (43.13) | Train logp 0.039510 (0.056426)
+2024-03-22 19:34:15,445 - [VAL] Iter 005000 | Val logp 0.069178 | NoImproveEpochs 00/20
+2024-03-22 19:37:58,258 - Iter 005100 | Epoch 3.15 | Time 2.376 | GradNorm 17.55 | CG iters 43 (43.17) | Train logp -0.000304 (0.007220)
+2024-03-22 19:40:47,491 - Iter 005200 | Epoch 3.21 | Time 2.633 | GradNorm 17.17 | CG iters 42 (43.19) | Train logp 0.116625 (0.102116)
+2024-03-22 19:44:26,745 - Iter 005300 | Epoch 3.27 | Time 2.523 | GradNorm 17.82 | CG iters 43 (43.22) | Train logp -0.053808 (-0.033130)
+2024-03-22 19:47:33,515 - Iter 005400 | Epoch 3.33 | Time 5.940 | GradNorm 17.62 | CG iters 42 (43.24) | Train logp 0.388492 (0.332577)
+2024-03-22 19:51:03,629 - Iter 005500 | Epoch 3.39 | Time 3.754 | GradNorm 19.02 | CG iters 44 (43.00) | Train logp 0.150015 (0.174226)
+2024-03-22 19:54:01,612 - [VAL] Iter 005500 | Val logp 0.069141 | NoImproveEpochs 01/20
+2024-03-22 19:57:33,631 - Iter 005600 | Epoch 3.45 | Time 3.043 | GradNorm 17.76 | CG iters 43 (42.94) | Train logp 0.008267 (0.030276)
+2024-03-22 20:00:51,072 - Iter 005700 | Epoch 3.52 | Time 2.629 | GradNorm 20.64 | CG iters 42 (42.99) | Train logp 0.378027 (0.331909)
+2024-03-22 20:04:01,342 - Iter 005800 | Epoch 3.58 | Time 2.584 | GradNorm 19.98 | CG iters 42 (42.92) | Train logp 0.060513 (0.096505)
+2024-03-22 20:07:32,697 - Iter 005900 | Epoch 3.64 | Time 2.446 | GradNorm 20.20 | CG iters 43 (43.11) | Train logp -0.046663 (-0.027676)
+2024-03-22 20:10:43,433 - Iter 006000 | Epoch 3.70 | Time 2.416 | GradNorm 18.23 | CG iters 43 (42.98) | Train logp 0.227549 (0.193701)
+2024-03-22 20:13:36,063 - [VAL] Iter 006000 | Val logp 0.134645 | NoImproveEpochs 00/20
+2024-03-22 20:16:49,623 - Iter 006100 | Epoch 3.76 | Time 2.718 | GradNorm 17.99 | CG iters 42 (43.13) | Train logp 0.138192 (0.145554)

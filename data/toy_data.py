@@ -36,7 +36,7 @@ class SwissRoll(ToyDataset):
     """
     def sample(self, batch_size, noise=0.5):
         return torch.from_numpy(
-            make_swiss_roll(batch_size, noise)[0][:, [0, 2]].astype('float64') / 5.)
+            make_swiss_roll(batch_size)[0][:, [0, 2]].astype('float64') / 5.)
 
 
 # taken from https://github.com/nicola-decao/BNAF/blob/master/data/generate2d.py
