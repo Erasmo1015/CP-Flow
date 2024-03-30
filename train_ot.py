@@ -25,7 +25,7 @@ def savefig(fn):
 
 batch_size_train = 128
 batch_size_test = 64
-dimx = 2
+dimx = 16
 if dimx == 2:
     m = np.array([1.5, 1.0])
     C = np.array([[0.9, -0.75], [-0.75, 0.9]])  # fixed for visualization
